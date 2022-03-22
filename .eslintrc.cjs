@@ -1,6 +1,7 @@
 module.exports = {
   env: {
-    node: true
+    node: true,
+    mocha: true
   },
   extends: [
     'eslint-config-digitalbazaar',
