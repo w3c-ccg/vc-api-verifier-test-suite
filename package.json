@@ -21,7 +21,12 @@
   },
   "homepage": "https://github.com/digitalbazaar/vc-api-verifier-test-suite#readme",
   "dependencies": {
+    "@digitalbazaar/did-method-key": "^2.0.0",
+    "@digitalbazaar/ed25519-signature-2020": "^3.0.0",
+    "@digitalbazaar/ezcap": "^2.0.4",
+    "bnid": "^2.1.0",
     "chai": "^4.3.6",
+    "https": "^1.0.0",
     "mocha": "^9.2.2",
     "require-dir": "^1.2.0"
   },
