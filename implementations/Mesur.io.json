@@ -1,0 +1,7 @@
+{
+  "name": "mesur.io",
+  "implementation": "mesur",
+  "verifier": {
+    "endpoint": "https://vc.mesur.io/next/credentials/verify"
+  }
+}

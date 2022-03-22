@@ -1,0 +1,7 @@
+{
+  "name": "Transmute",
+  "implementation": "transmute",
+  "verifier": {
+    "endpoint": "https://vc.transmute.world/next/credentials/verify"
+  }
+}
