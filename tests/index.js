@@ -3,14 +3,13 @@
  */
 'use strict';
 
-const implementations = require('../implementations');
+const chai = require('chai');
+const implementations = require('../implementations.js');
+const Implementation = require('./Implementation.js');
 const validVC = require('../mock-data/valid-vc.json');
 
-const chai = require('chai');
-
-// eslint-disable-next-line no-unused-vars
 const should = chai.should();
-// test these implementations' issuers or verifiers
+
 const test = [
   'Digital Bazaar'
 ];
@@ -18,11 +17,28 @@ const test = [
 // only test listed implementations
 const testAPIs = implementations.filter(v => test.includes(v.name));
 
-for(const implementation of testAPIs) {
-  describe(implementation.name, function() {
+for(const verifier of testAPIs) {
+  describe(verifier.name, function() {
     it('MUST verify a valid VC.', async function() {
-      console.log(implementation.name);
-      console.log(validVC);
+      // this tells the test report which cell in the interop matrix
+      // the result goes in
+      this.test.cell = {
+        columnId: verifier.name,
+        rowId: this.test.title
+      };
+      const implementation = new Implementation(verifier);
+      let response;
+      let err;
+      try {
+        response = await implementation.verify({
+          credential: validVC
+        });
+      } catch(e) {
+        err = e;
+      }
+      should.not.exist(err);
+      should.exist(response);
+      response.status.should.equal(200);
     });
   });
 }
