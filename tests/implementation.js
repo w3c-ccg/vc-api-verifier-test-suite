@@ -35,10 +35,14 @@ class Implementation {
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
+      let capability;
+      if(this.settings.verifier.zcap) {
+        capability = JSON.parse(this.settings.verifier.zcap);
+      }
       const zcapClient = await _getZcapClient();
       const result = await zcapClient.write({
         url: this.settings.verifier.endpoint,
-        capability: JSON.parse(this.settings.verifier.zcap),
+        capability,
         json: body
       });
       return result;
