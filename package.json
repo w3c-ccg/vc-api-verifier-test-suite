@@ -1,0 +1,32 @@
+{
+  "name": "vc-api-verifier-test-suite",
+  "version": "0.0.1",
+  "description": "Test Suite for Verifiers that implement the VC HTTP API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalbazaar/vc-api-verifier-test-suite.git"
+  },
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/vc-api-verifier-test-suite/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/vc-api-verifier-test-suite#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-digitalbazaar": "^2.8.0",
+    "eslint-plugin-jsdoc": "^38.0.6"
+  }
+}
