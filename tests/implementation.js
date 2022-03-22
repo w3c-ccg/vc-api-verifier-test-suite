@@ -42,6 +42,7 @@ class Implementation {
       const zcapClient = await _getZcapClient();
       const result = await zcapClient.write({
         url: this.settings.verifier.endpoint,
+        headers,
         capability,
         json: body
       });
