@@ -4,7 +4,7 @@
   "description": "Test Suite for Verifiers that implement the VC HTTP API.",
   "main": "tests/",
   "scripts": {
-    "test": "mocha tests/",
+    "test": "mocha tests/ --timeout 15000",
     "lint": "eslint ."
   },
   "repository": {
