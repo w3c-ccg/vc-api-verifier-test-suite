@@ -40,7 +40,7 @@ for(const verifier of testAPIs) {
       should.exist(response);
       response.status.should.equal(200);
     });
-    it('MUST not verify if "@context" property  is missing.', async function() {
+    it('MUST not verify if "@context" property is missing.', async function() {
       this.test.cell = {
         columnId: verifier.name,
         rowId: this.test.title
@@ -82,7 +82,7 @@ for(const verifier of testAPIs) {
       should.not.exist(response);
       err.status.should.equal(400);
     });
-    it('MUST not verify  if "issuer" property is  missing.', async function() {
+    it('MUST not verify if "issuer" property is missing.', async function() {
       this.test.cell = {
         columnId: verifier.name,
         rowId: this.test.title
@@ -125,5 +125,26 @@ for(const verifier of testAPIs) {
         should.not.exist(response);
         err.status.should.equal(400);
       });
+    it('MUST not verify if "proof" property is missing.', async function() {
+      this.test.cell = {
+        columnId: verifier.name,
+        rowId: this.test.title
+      };
+      const implementation = new Implementation(verifier);
+      const noProofVC = {...validVC};
+      delete noProofVC.proof;
+      let response;
+      let err;
+      try {
+        response = await implementation.verify({
+          credential: noProofVC
+        });
+      } catch(e) {
+        err = e;
+      }
+      should.exist(err);
+      should.not.exist(response);
+      err.status.should.equal(400);
+    });
   });
 }
