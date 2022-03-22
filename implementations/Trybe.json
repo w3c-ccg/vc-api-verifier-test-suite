@@ -1,0 +1,7 @@
+{
+  "name": "Trybe",
+  "implementation": "Trybe",
+  "verifier": {
+    "endpoint": "https://api.dev.trybe.id/credentials/verify"
+  }
+}

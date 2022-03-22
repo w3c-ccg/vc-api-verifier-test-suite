@@ -1,0 +1,7 @@
+{
+  "name": "Spruce",
+  "implementation": "Spruce",
+  "verifier": {
+    "endpoint": "https://demo.spruceid.com/credentials/verify"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Mavennet",
+  "implementation": "neo-flow",
+  "verifier": {
+    "endpoint": "https://api.neo-flow.com/verifier/credentials"
+  }
+}
