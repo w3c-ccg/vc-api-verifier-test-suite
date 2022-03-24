@@ -3,14 +3,15 @@
  */
 'use strict';
 
-const https = require('https');
-const agent = new https.Agent({rejectUnauthorized: false});
-const didKey = require('@digitalbazaar/did-method-key');
 const {decodeSecretKeySeed} = require('bnid');
-const {ZcapClient} = require('@digitalbazaar/ezcap');
+const didKey = require('@digitalbazaar/did-method-key');
 const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
+const https = require('https');
+const {ZcapClient} = require('@digitalbazaar/ezcap');
 
 const didKeyDriver = didKey.driver();
+const agent = new https.Agent({rejectUnauthorized: false});
+
 const _headers = {
   Accept: 'application/ld+json,application/json',
   'Content-Type': 'application/json',
