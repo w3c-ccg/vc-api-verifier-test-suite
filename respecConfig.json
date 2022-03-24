@@ -1,0 +1,19 @@
+{
+  "specStatus": "unofficial",
+  "shortName": "vc-api-verifier-test-suite",
+  "subtitle": "Test Interoperability Report for Verifiable Credentials API Verifier",
+  "github": "https://github.com/digitalbazaar/vc-api-verifier-test-suite",
+  "edDraftURI": "https://w3c-ccg.github.io/vc-api/#verify-credential",
+  "doJsonLd": true,
+  "includePermalinks": false,
+  "editors": [
+    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/JSAssassin",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+  ],
+  "authors": [
+    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/JSAssassin",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" },
+    { "name": "Manu Sporny", "url": "http://manu.sporny.org/",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+    ]
+}

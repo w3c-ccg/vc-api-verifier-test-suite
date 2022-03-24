@@ -4,7 +4,7 @@
   "description": "Test Suite for Verifiers that implement the VC HTTP API.",
   "main": "tests/",
   "scripts": {
-    "test": "mocha tests/ --timeout 15000",
+    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"VC API Verifier Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
     "lint": "eslint ."
   },
   "repository": {
@@ -19,6 +19,11 @@
   "bugs": {
     "url": "https://github.com/digitalbazaar/vc-api-verifier-test-suite/issues"
   },
+  "keywords": [
+    "test",
+    "vc",
+    "api"
+  ],
   "homepage": "https://github.com/digitalbazaar/vc-api-verifier-test-suite#readme",
   "dependencies": {
     "@digitalbazaar/did-method-key": "^2.0.0",
@@ -28,6 +33,7 @@
     "chai": "^4.3.6",
     "https": "^1.0.0",
     "mocha": "^9.2.2",
+    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#extend-helpers",
     "require-dir": "^1.2.0"
   },
   "devDependencies": {
