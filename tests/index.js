@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const implementations = require('../implementations.js');
-const Implementation = require('./Implementation.js');
+const Implementation = require('./implementation.js');
 const validVC = require('../mock-data/valid-vc.json');
 
 const should = chai.should();
