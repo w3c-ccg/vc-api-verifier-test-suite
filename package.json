@@ -29,6 +29,7 @@
     "@digitalbazaar/did-method-key": "^2.0.0",
     "@digitalbazaar/ed25519-signature-2020": "^3.0.0",
     "@digitalbazaar/ezcap": "^2.0.4",
+    "@digitalbazaar/http-client": "^2.0.1",
     "bnid": "^2.1.0",
     "chai": "^4.3.6",
     "https": "^1.0.0",
