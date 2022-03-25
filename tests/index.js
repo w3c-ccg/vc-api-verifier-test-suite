@@ -81,6 +81,7 @@ for(const verifier of testAPIs) {
       should.exist(err);
       should.not.exist(response);
       err.status.should.equal(400);
+      err.data.verified.should.equal(false);
     });
     it('MUST not verify if "issuer" property is missing.', async function() {
       this.test.cell = {
@@ -102,6 +103,7 @@ for(const verifier of testAPIs) {
       should.exist(err);
       should.not.exist(response);
       err.status.should.equal(400);
+      err.data.verified.should.equal(false);
     });
     it('MUST not verify if "credentialSubject" property is missing.',
       async function() {
@@ -124,6 +126,7 @@ for(const verifier of testAPIs) {
         should.exist(err);
         should.not.exist(response);
         err.status.should.equal(400);
+        err.data.verified.should.equal(false);
       });
     it('MUST not verify if "proof" property is missing.', async function() {
       this.test.cell = {
@@ -145,7 +148,123 @@ for(const verifier of testAPIs) {
       should.exist(err);
       should.not.exist(response);
       err.status.should.equal(400);
+      err.data.verified.should.equal(false);
     });
+    it('MUST not verify if "proof.type" property is missing.',
+      async function() {
+        this.test.cell = {
+          columnId: verifier.name,
+          rowId: this.test.title
+        };
+        const implementation = new Implementation(verifier);
+        const noProofTypeVC = {...validVC};
+        delete noProofTypeVC.proof.type;
+        let response;
+        let err;
+        try {
+          response = await implementation.verify({
+            credential: noProofTypeVC
+          });
+        } catch(e) {
+          err = e;
+        }
+        should.exist(err);
+        should.not.exist(response);
+        err.status.should.equal(400);
+        err.data.verified.should.equal(false);
+      });
+    it('MUST not verify if "proof.created" property is missing.',
+      async function() {
+        this.test.cell = {
+          columnId: verifier.name,
+          rowId: this.test.title
+        };
+        const implementation = new Implementation(verifier);
+        const noProofCreatedVC = {...validVC};
+        delete noProofCreatedVC.proof.created;
+        let response;
+        let err;
+        try {
+          response = await implementation.verify({
+            credential: noProofCreatedVC
+          });
+        } catch(e) {
+          err = e;
+        }
+        should.exist(err);
+        should.not.exist(response);
+        err.status.should.equal(400);
+        err.data.verified.should.equal(false);
+      });
+    it('MUST not verify if "proof.verificationMethod" property is missing.',
+      async function() {
+        this.test.cell = {
+          columnId: verifier.name,
+          rowId: this.test.title
+        };
+        const implementation = new Implementation(verifier);
+        const noProofVerificationMethodVC = {...validVC};
+        delete noProofVerificationMethodVC.proof.verificationMethod;
+        let response;
+        let err;
+        try {
+          response = await implementation.verify({
+            credential: noProofVerificationMethodVC
+          });
+        } catch(e) {
+          err = e;
+        }
+        should.exist(err);
+        should.not.exist(response);
+        err.status.should.equal(400);
+        err.data.verified.should.equal(false);
+      });
+    it('MUST not verify if "proof.proofValue" property is missing.',
+      async function() {
+        this.test.cell = {
+          columnId: verifier.name,
+          rowId: this.test.title
+        };
+        const implementation = new Implementation(verifier);
+        const noProofValueVC = {...validVC};
+        delete noProofValueVC.proof.proofValue;
+        let response;
+        let err;
+        try {
+          response = await implementation.verify({
+            credential: noProofValueVC
+          });
+        } catch(e) {
+          err = e;
+        }
+        should.exist(err);
+        should.not.exist(response);
+        err.status.should.equal(400);
+        err.data.verified.should.equal(false);
+      });
+    it('MUST not verify if "proof.proofPurpose" property is missing.',
+      async function() {
+        this.test.cell = {
+          columnId: verifier.name,
+          rowId: this.test.title
+        };
+        const implementation = new Implementation(verifier);
+        const noProofPurposeVC = {...validVC};
+        delete noProofPurposeVC.proof.proofPurpose;
+        let response;
+        let err;
+        try {
+          response = await implementation.verify({
+            credential: noProofPurposeVC
+          });
+        } catch(e) {
+          err = e;
+        }
+        should.exist(err);
+        should.not.exist(response);
+        err.status.should.equal(400);
+        err.data.verified.should.equal(false);
+      });
     it('MUST not verify if "@context" is not an array.', async function() {
       this.test.cell = {
         columnId: verifier.name,
@@ -217,6 +336,7 @@ for(const verifier of testAPIs) {
         should.exist(err);
         should.not.exist(response);
         err.status.should.equal(400);
+        err.data.verified.should.equal(false);
       }
     });
     it('MUST not verify if "type" items are not strings.', async function() {
@@ -241,6 +361,7 @@ for(const verifier of testAPIs) {
         should.exist(err);
         should.not.exist(response);
         err.status.should.equal(400);
+        err.data.verified.should.equal(false);
       }
     });
     it('MUST not verify  if "issuer" is not an object or a string.',
@@ -266,6 +387,7 @@ for(const verifier of testAPIs) {
           should.exist(err);
           should.not.exist(response);
           err.status.should.equal(400);
+          err.data.verified.should.equal(false);
         }
       });
     it('MUST not verify if "credentialSubject" is not an object.',
@@ -293,6 +415,7 @@ for(const verifier of testAPIs) {
           should.exist(err);
           should.not.exist(response);
           err.status.should.equal(400);
+          err.data.verified.should.equal(false);
         }
       });
     it('MUST not verify if "proof" is not an object.', async function() {
@@ -317,6 +440,7 @@ for(const verifier of testAPIs) {
         should.exist(err);
         should.not.exist(response);
         err.status.should.equal(400);
+        err.data.verified.should.equal(false);
       }
     });
   });
