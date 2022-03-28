@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const implementations = require('../implementations.js');
-const Implementation = require('./implementation.js');
+const {verify} = require('./verify.js');
 const validVC = require('../mock-data/valid-vc.json');
 const {cloneJSON} = require('./helpers');
 
@@ -33,22 +33,23 @@ describe('Verifiable Credentials Verifier API', function() {
   this.columnLabel = 'Issuer';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  for(const verifier of testAPIs) {
-    columnNames.push(verifier.name);
-    describe(verifier.name, function() {
+  for(const implementation of testAPIs) {
+    columnNames.push(implementation.name);
+    const verifier = implementation.verifier;
+    describe(implementation.name, function() {
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
         // the result goes in
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         let response;
         let err;
         try {
-          response = await implementation.verify({
-            credential: validVC
+          response = await verify({
+            credential: validVC,
+            verifier
           });
         } catch(e) {
           err = e;
@@ -60,17 +61,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "@context" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noContextVC = cloneJSON(validVC);
           delete noContextVC['@context'];
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noContextVC
+            response = await verify({
+              credential: noContextVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -81,17 +82,17 @@ describe('Verifiable Credentials Verifier API', function() {
         });
       it('MUST not verify if "type" property is missing.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const noTypeVC = cloneJSON(validVC);
         delete noTypeVC.type;
         let response;
         let err;
         try {
-          response = await implementation.verify({
-            credential: noTypeVC
+          response = await verify({
+            credential: noTypeVC,
+            verifier
           });
         } catch(e) {
           err = e;
@@ -102,17 +103,17 @@ describe('Verifiable Credentials Verifier API', function() {
       });
       it('MUST not verify if "issuer" property is missing.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const noIssuerVC = cloneJSON(validVC);
         delete noIssuerVC.issuer;
         let response;
         let err;
         try {
-          response = await implementation.verify({
-            credential: noIssuerVC
+          response = await verify({
+            credential: noIssuerVC,
+            verifier
           });
         } catch(e) {
           err = e;
@@ -124,17 +125,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "credentialSubject" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noCredentialSubjectVC = cloneJSON(validVC);
           delete noCredentialSubjectVC.credentialSubject;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noCredentialSubjectVC
+            response = await verify({
+              credential: noCredentialSubjectVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -145,17 +146,17 @@ describe('Verifiable Credentials Verifier API', function() {
         });
       it('MUST not verify if "proof" property is missing.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const noProofVC = cloneJSON(validVC);
         delete noProofVC.proof;
         let response;
         let err;
         try {
-          response = await implementation.verify({
-            credential: noProofVC
+          response = await verify({
+            credential: noProofVC,
+            verifier
           });
         } catch(e) {
           err = e;
@@ -167,17 +168,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "proof.type" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noProofTypeVC = cloneJSON(validVC);
           delete noProofTypeVC.proof.type;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noProofTypeVC
+            response = await verify({
+              credential: noProofTypeVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -189,17 +190,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "proof.created" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noProofCreatedVC = cloneJSON(validVC);
           delete noProofCreatedVC.proof.created;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noProofCreatedVC
+            response = await verify({
+              credential: noProofCreatedVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -211,17 +212,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "proof.verificationMethod" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noProofVerificationMethodVC = cloneJSON(validVC);
           delete noProofVerificationMethodVC.proof.verificationMethod;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noProofVerificationMethodVC
+            response = await verify({
+              credential: noProofVerificationMethodVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -233,17 +234,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "proof.proofValue" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noProofValueVC = cloneJSON(validVC);
           delete noProofValueVC.proof.proofValue;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noProofValueVC
+            response = await verify({
+              credential: noProofValueVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -255,17 +256,17 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "proof.proofPurpose" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const noProofPurposeVC = cloneJSON(validVC);
           delete noProofPurposeVC.proof.proofPurpose;
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: noProofPurposeVC
+            response = await verify({
+              credential: noProofPurposeVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -276,10 +277,9 @@ describe('Verifiable Credentials Verifier API', function() {
         });
       it('MUST not verify if "@context" is not an array.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const copyVC = cloneJSON(validVC);
         const invalidContextTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidContextType of invalidContextTypes) {
@@ -287,8 +287,9 @@ describe('Verifiable Credentials Verifier API', function() {
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: copyVC
+            response = await verify({
+              credential: copyVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -301,10 +302,9 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "@context" items are not strings.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const copyVC = cloneJSON(validVC);
           const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
@@ -312,8 +312,9 @@ describe('Verifiable Credentials Verifier API', function() {
             let response;
             let err;
             try {
-              response = await implementation.verify({
-                credential: copyVC
+              response = await verify({
+                credential: copyVC,
+                verifier
               });
             } catch(e) {
               err = e;
@@ -325,10 +326,9 @@ describe('Verifiable Credentials Verifier API', function() {
         });
       it('MUST not verify if "type" is not an array.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const copyVC = cloneJSON(validVC);
         const invalidTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidType of invalidTypes) {
@@ -336,8 +336,9 @@ describe('Verifiable Credentials Verifier API', function() {
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: copyVC
+            response = await verify({
+              credential: copyVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -349,10 +350,9 @@ describe('Verifiable Credentials Verifier API', function() {
       });
       it('MUST not verify if "type" items are not strings.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const copyVC = cloneJSON(validVC);
         const invalidTypeItemTypes = [[], {}, null, undefined, 10, true];
         for(const invalidItemType of invalidTypeItemTypes) {
@@ -360,8 +360,9 @@ describe('Verifiable Credentials Verifier API', function() {
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: copyVC
+            response = await verify({
+              credential: copyVC,
+              verifier
             });
           } catch(e) {
             err = e;
@@ -374,10 +375,9 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "issuer" is not an object or a string.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const copyVC = cloneJSON(validVC);
           const invalidIssuerTypes = [[], null, undefined, 10, true];
           for(const invalidIssuerType of invalidIssuerTypes) {
@@ -385,8 +385,9 @@ describe('Verifiable Credentials Verifier API', function() {
             let response;
             let err;
             try {
-              response = await implementation.verify({
-                credential: copyVC
+              response = await verify({
+                credential: copyVC,
+                verifier
               });
             } catch(e) {
               err = e;
@@ -399,10 +400,9 @@ describe('Verifiable Credentials Verifier API', function() {
       it('MUST not verify if "credentialSubject" is not an object.',
         async function() {
           this.test.cell = {
-            columnId: verifier.name,
+            columnId: implementation.name,
             rowId: this.test.title
           };
-          const implementation = new Implementation(verifier);
           const copyVC = cloneJSON(validVC);
           const invalidCredentialSubjectTypes = [
             'string', null, undefined, 10, true, []
@@ -412,8 +412,9 @@ describe('Verifiable Credentials Verifier API', function() {
             let response;
             let err;
             try {
-              response = await implementation.verify({
-                credential: copyVC
+              response = await verify({
+                credential: copyVC,
+                verifier
               });
             } catch(e) {
               err = e;
@@ -425,10 +426,9 @@ describe('Verifiable Credentials Verifier API', function() {
         });
       it('MUST not verify if "proof" is not an object.', async function() {
         this.test.cell = {
-          columnId: verifier.name,
+          columnId: implementation.name,
           rowId: this.test.title
         };
-        const implementation = new Implementation(verifier);
         const copyVC = cloneJSON(validVC);
         const invalidProofTypes = ['string', null, undefined, 10, true, []];
         for(const invalidProofType of invalidProofTypes) {
@@ -436,8 +436,9 @@ describe('Verifiable Credentials Verifier API', function() {
           let response;
           let err;
           try {
-            response = await implementation.verify({
-              credential: copyVC
+            response = await verify({
+              credential: copyVC,
+              verifier
             });
           } catch(e) {
             err = e;
