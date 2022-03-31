@@ -11,13 +11,6 @@ const {cloneJSON} = require('./helpers');
 
 const should = chai.should();
 
-const test = [
-  'Digital Bazaar'
-];
-
-// only test listed implementations
-const testAPIs = implementations.filter(v => test.includes(v.name));
-
 describe('Verifiable Credentials Verifier API', function() {
   const summaries = new Set();
   this.summary = summaries;
@@ -33,7 +26,7 @@ describe('Verifiable Credentials Verifier API', function() {
   this.columnLabel = 'Issuer';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  for(const implementation of testAPIs) {
+  for(const implementation of implementations) {
     columnNames.push(implementation.name);
     const verifier = implementation.verifier;
     describe(implementation.name, function() {
