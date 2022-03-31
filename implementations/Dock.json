@@ -1,7 +1,0 @@
-{
-  "name": "Dock",
-  "implementation": "Dock",
-  "verifier": {
-    "endpoint": "https://vcapi.dock.io/verifier/credentials"
-  }
-}
