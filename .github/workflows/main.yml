@@ -51,5 +51,6 @@ jobs:
           branch: gh-pages
           folder: reports
           token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_assets: '.github,**/.gitignore'
       - name: Report Github Pages Deployment Status
         run: echo $deployment_status
