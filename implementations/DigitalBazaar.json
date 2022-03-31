@@ -1,6 +1,6 @@
 {
   "name": "Digital Bazaar",
-  "implementation": "Demo",
+  "implementation": "Veres Verifier (QA)",
   "verifier": {
     "id": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z",
     "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
