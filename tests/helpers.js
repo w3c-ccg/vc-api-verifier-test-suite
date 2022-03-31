@@ -3,6 +3,7 @@
  */
 'use strict';
 
+const chai = require('chai');
 const https = require('https');
 const {decodeSecretKeySeed} = require('bnid');
 const didKey = require('@digitalbazaar/did-method-key');
@@ -11,6 +12,7 @@ const {ZcapClient} = require('@digitalbazaar/ezcap');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 const didKeyDriver = didKey.driver();
+const should = chai.should();
 
 // this will create a new copy of a non-circular JSON object
 const cloneJSON = data => JSON.parse(JSON.stringify(data, null, 2));
@@ -31,7 +33,15 @@ async function getZcapClient() {
   return zcapClient;
 }
 
+function testBadRequestError({result, err}) {
+  should.exist(err);
+  should.not.exist(result);
+  should.exist(err.status);
+  err.status.should.equal(400);
+}
+
 module.exports = {
   cloneJSON,
-  getZcapClient
+  getZcapClient,
+  testBadRequestError
 };

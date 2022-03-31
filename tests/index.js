@@ -7,16 +7,9 @@ const chai = require('chai');
 const implementations = require('../implementations.js');
 const {verify} = require('./verify.js');
 const validVC = require('../mock-data/valid-vc.json');
-const {cloneJSON} = require('./helpers');
+const {cloneJSON, testBadRequestError} = require('./helpers');
 
 const should = chai.should();
-
-const test = [
-  'Digital Bazaar', 'Danube Tech', 'mesur.io', 'Mavennet', 'Transmute'
-];
-
-// only test listed implementations
-const testAPIs = implementations.filter(v => test.includes(v.name));
 
 describe('Verifiable Credentials Verifier API', function() {
   const summaries = new Set();
@@ -33,7 +26,7 @@ describe('Verifiable Credentials Verifier API', function() {
   this.columnLabel = 'Issuer';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  for(const implementation of testAPIs) {
+  for(const implementation of implementations) {
     columnNames.push(implementation.name);
     const verifier = implementation.verifier;
     describe(implementation.name, function() {
@@ -44,19 +37,14 @@ describe('Verifiable Credentials Verifier API', function() {
           columnId: implementation.name,
           rowId: this.test.title
         };
-        let response;
-        let err;
-        try {
-          response = await verify({
-            credential: validVC,
-            verifier
-          });
-        } catch(e) {
-          err = e;
-        }
+        const {result, err} = await verify({
+          credential: validVC,
+          verifier
+        });
         should.not.exist(err);
-        should.exist(response);
-        response.status.should.equal(200);
+        should.exist(result);
+        should.exist(result.status);
+        result.status.should.equal(200);
       });
       it('MUST not verify if "@context" property is missing.',
         async function() {
@@ -66,19 +54,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noContextVC = cloneJSON(validVC);
           delete noContextVC['@context'];
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noContextVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noContextVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "type" property is missing.', async function() {
         this.test.cell = {
@@ -87,19 +67,11 @@ describe('Verifiable Credentials Verifier API', function() {
         };
         const noTypeVC = cloneJSON(validVC);
         delete noTypeVC.type;
-        let response;
-        let err;
-        try {
-          response = await verify({
-            credential: noTypeVC,
-            verifier
-          });
-        } catch(e) {
-          err = e;
-        }
-        should.exist(err);
-        should.not.exist(response);
-        err.status.should.equal(400);
+        const {result, err} = await verify({
+          credential: noTypeVC,
+          verifier
+        });
+        testBadRequestError({result, err});
       });
       it('MUST not verify if "issuer" property is missing.', async function() {
         this.test.cell = {
@@ -108,19 +80,11 @@ describe('Verifiable Credentials Verifier API', function() {
         };
         const noIssuerVC = cloneJSON(validVC);
         delete noIssuerVC.issuer;
-        let response;
-        let err;
-        try {
-          response = await verify({
-            credential: noIssuerVC,
-            verifier
-          });
-        } catch(e) {
-          err = e;
-        }
-        should.exist(err);
-        should.not.exist(response);
-        err.status.should.equal(400);
+        const {result, err} = await verify({
+          credential: noIssuerVC,
+          verifier
+        });
+        testBadRequestError({result, err});
       });
       it('MUST not verify if "credentialSubject" property is missing.',
         async function() {
@@ -130,19 +94,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noCredentialSubjectVC = cloneJSON(validVC);
           delete noCredentialSubjectVC.credentialSubject;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noCredentialSubjectVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noCredentialSubjectVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "proof" property is missing.', async function() {
         this.test.cell = {
@@ -151,19 +107,11 @@ describe('Verifiable Credentials Verifier API', function() {
         };
         const noProofVC = cloneJSON(validVC);
         delete noProofVC.proof;
-        let response;
-        let err;
-        try {
-          response = await verify({
-            credential: noProofVC,
-            verifier
-          });
-        } catch(e) {
-          err = e;
-        }
-        should.exist(err);
-        should.not.exist(response);
-        err.status.should.equal(400);
+        const {result, err} = await verify({
+          credential: noProofVC,
+          verifier
+        });
+        testBadRequestError({result, err});
       });
       it('MUST not verify if "proof.type" property is missing.',
         async function() {
@@ -173,19 +121,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noProofTypeVC = cloneJSON(validVC);
           delete noProofTypeVC.proof.type;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noProofTypeVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noProofTypeVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "proof.created" property is missing.',
         async function() {
@@ -195,19 +135,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noProofCreatedVC = cloneJSON(validVC);
           delete noProofCreatedVC.proof.created;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noProofCreatedVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noProofCreatedVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "proof.verificationMethod" property is missing.',
         async function() {
@@ -217,19 +149,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noProofVerificationMethodVC = cloneJSON(validVC);
           delete noProofVerificationMethodVC.proof.verificationMethod;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noProofVerificationMethodVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noProofVerificationMethodVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "proof.proofValue" property is missing.',
         async function() {
@@ -239,19 +163,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noProofValueVC = cloneJSON(validVC);
           delete noProofValueVC.proof.proofValue;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noProofValueVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noProofValueVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "proof.proofPurpose" property is missing.',
         async function() {
@@ -261,19 +177,11 @@ describe('Verifiable Credentials Verifier API', function() {
           };
           const noProofPurposeVC = cloneJSON(validVC);
           delete noProofPurposeVC.proof.proofPurpose;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: noProofPurposeVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: noProofPurposeVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         });
       it('MUST not verify if "@context" is not an array.', async function() {
         this.test.cell = {
@@ -284,19 +192,11 @@ describe('Verifiable Credentials Verifier API', function() {
         const invalidContextTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidContextType of invalidContextTypes) {
           copyVC['@context'] = invalidContextType;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: copyVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: copyVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         }
       });
       it('MUST not verify if "@context" items are not strings.',
@@ -309,19 +209,11 @@ describe('Verifiable Credentials Verifier API', function() {
           const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
             copyVC['@context'] = [invalidContextItemType];
-            let response;
-            let err;
-            try {
-              response = await verify({
-                credential: copyVC,
-                verifier
-              });
-            } catch(e) {
-              err = e;
-            }
-            should.exist(err);
-            should.not.exist(response);
-            err.status.should.equal(400);
+            const {result, err} = await verify({
+              credential: copyVC,
+              verifier
+            });
+            testBadRequestError({result, err});
           }
         });
       it('MUST not verify if "type" is not an array.', async function() {
@@ -333,19 +225,11 @@ describe('Verifiable Credentials Verifier API', function() {
         const invalidTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidType of invalidTypes) {
           copyVC.type = invalidType;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: copyVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: copyVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         }
       });
       it('MUST not verify if "type" items are not strings.', async function() {
@@ -357,19 +241,11 @@ describe('Verifiable Credentials Verifier API', function() {
         const invalidTypeItemTypes = [[], {}, null, undefined, 10, true];
         for(const invalidItemType of invalidTypeItemTypes) {
           copyVC.type = [invalidItemType];
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: copyVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: copyVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         }
       });
       it('MUST not verify if "issuer" is not an object or a string.',
@@ -382,19 +258,11 @@ describe('Verifiable Credentials Verifier API', function() {
           const invalidIssuerTypes = [[], null, undefined, 10, true];
           for(const invalidIssuerType of invalidIssuerTypes) {
             copyVC.issuer = invalidIssuerType;
-            let response;
-            let err;
-            try {
-              response = await verify({
-                credential: copyVC,
-                verifier
-              });
-            } catch(e) {
-              err = e;
-            }
-            should.exist(err);
-            should.not.exist(response);
-            err.status.should.equal(400);
+            const {result, err} = await verify({
+              credential: copyVC,
+              verifier
+            });
+            testBadRequestError({result, err});
           }
         });
       it('MUST not verify if "credentialSubject" is not an object.',
@@ -409,19 +277,11 @@ describe('Verifiable Credentials Verifier API', function() {
           ];
           for(const invalidType of invalidCredentialSubjectTypes) {
             copyVC.credentialSubject = invalidType;
-            let response;
-            let err;
-            try {
-              response = await verify({
-                credential: copyVC,
-                verifier
-              });
-            } catch(e) {
-              err = e;
-            }
-            should.exist(err);
-            should.not.exist(response);
-            err.status.should.equal(400);
+            const {result, err} = await verify({
+              credential: copyVC,
+              verifier
+            });
+            testBadRequestError({result, err});
           }
         });
       it('MUST not verify if "proof" is not an object.', async function() {
@@ -433,19 +293,11 @@ describe('Verifiable Credentials Verifier API', function() {
         const invalidProofTypes = ['string', null, undefined, 10, true, []];
         for(const invalidProofType of invalidProofTypes) {
           copyVC.proof = invalidProofType;
-          let response;
-          let err;
-          try {
-            response = await verify({
-              credential: copyVC,
-              verifier
-            });
-          } catch(e) {
-            err = e;
-          }
-          should.exist(err);
-          should.not.exist(response);
-          err.status.should.equal(400);
+          const {result, err} = await verify({
+            credential: copyVC,
+            verifier
+          });
+          testBadRequestError({result, err});
         }
       });
     });

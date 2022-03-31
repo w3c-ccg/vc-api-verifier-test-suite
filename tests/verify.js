@@ -15,6 +15,8 @@ const _headers = {
 };
 
 const verify = async ({credential, auth, verifier}) => {
+  let result;
+  let err;
   try {
     const body = {
       verifiableCredential: credential,
@@ -32,24 +34,22 @@ const verify = async ({credential, auth, verifier}) => {
     if(verifier.zcap && typeof verifier.zcap === 'string') {
       const capability = JSON.parse(verifier.zcap);
       const zcapClient = await getZcapClient();
-      return await zcapClient.write({
+      result = await zcapClient.write({
         url: verifier.endpoint,
         headers,
         capability,
         json: body
       });
+    } else {
+      result = await httpClient.post(
+        verifier.endpoint,
+        {headers, agent, json: body}
+      );
     }
-    return await httpClient.post(
-      verifier.endpoint,
-      {headers, agent, json: body}
-    );
   } catch(e) {
-    // this is just to make debugging easier
-    if(e && e.response && e.response.data) {
-      throw new Error(JSON.stringify(e.response.data, null, 2));
-    }
-    throw e;
+    err = e;
   }
+  return {result, err};
 };
 
 module.exports = {verify};

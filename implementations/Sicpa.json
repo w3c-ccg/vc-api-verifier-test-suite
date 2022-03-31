@@ -1,7 +1,0 @@
-{
-  "name": "SICPA",
-  "implementation": "ocs",
-  "verifier": {
-    "endpoint": "https://svip-interop.ocs-support.com/api/verifier/credentials"
-  }
-}
