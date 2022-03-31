@@ -16,10 +16,6 @@
     "degree": {
       "degreeType": "BachelorDegree",
       "name": "Bachelor of Science and Arts"
-    },
-    "child": {
-      "@id": "_:c1",
-      "name": "Secret Child"
     }
   },
   "proof": {
