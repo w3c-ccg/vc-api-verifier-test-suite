@@ -1,28 +1,23 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://www.w3.org/2018/credentials/examples/v1",
     "https://w3id.org/security/suites/ed25519-2020/v1"
   ],
-  "id": "urn:uuid:86294362-4254-4f36-854f-3952fe42555d",
   "type": [
-    "VerifiableCredential",
-    "UniversityDegreeCredential"
+    "VerifiableCredential"
   ],
-  "issuer": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
-  "issuanceDate": "2020-03-16T22:37:26.544Z",
   "credentialSubject": {
-    "id": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
-    "degree": {
-      "degreeType": "BachelorDegree",
-      "name": "Bachelor of Science and Arts"
-    }
+    "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
+  "id": "urn:uuid:797f719c-e4ac-4e9e-8da8-bc60a9c8ba91",
+  "issuanceDate": "2022-03-31T19:21:25Z",
+  "expirationDate": "2022-05-31T19:21:25Z",
+  "issuer": "did:key:z6MkiVQTYk3L2XKY6yg6MyeN2QLE5QkKcXByUeY1dkdiLx4j",
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-03-07T16:17:42Z",
-    "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
+    "created": "2022-03-31T19:21:26Z",
+    "verificationMethod": "did:key:z6MkiVQTYk3L2XKY6yg6MyeN2QLE5QkKcXByUeY1dkdiLx4j#z6MkiVQTYk3L2XKY6yg6MyeN2QLE5QkKcXByUeY1dkdiLx4j",
     "proofPurpose": "assertionMethod",
-    "proofValue": "z4hYTXdXVsRGmzHG9CWkjREmcrWgwvCyUJjWVUM3mwfLxh53qCXEBFejXdRNM8KMMu33qXB9R6Mys4d9vjif9eiXj"
+    "proofValue": "z4ngCxM3oqs6Fxq4NcgzXT8XugTK92EeHxkux8CjdZwSbFqMZVDQqBJcXb3MUcfbDWzsCoDA3pYAYJDqYbCtMvXxz"
   }
 }
