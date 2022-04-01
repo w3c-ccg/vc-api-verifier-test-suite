@@ -34,10 +34,10 @@ async function getZcapClient() {
 }
 
 function testBadRequestError({result, err}) {
-  should.exist(err);
-  should.not.exist(result);
-  should.exist(err.status);
-  err.status.should.equal(400);
+  should.not.exist(result, 'Expected no result from verifier');
+  should.exist(err, 'Expected verifier to error');
+  should.exist(err.status, 'Expected an HTTP error response code');
+  err.status.should.equal(400, 'Expected status code 400 Bad Request');
 }
 
 module.exports = {
