@@ -11,7 +11,7 @@ const {cloneJSON, testBadRequestError} = require('./helpers');
 
 const should = chai.should();
 
-describe('Verifiable Credentials Verifier API', function() {
+describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
   this.summary = summaries;
   // column names for the matrix go here
