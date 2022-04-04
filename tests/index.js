@@ -23,7 +23,7 @@ describe('Verifiable Credentials Verifier API', function() {
   this.report = true;
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
-  this.columnLabel = 'Issuer';
+  this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
   for(const implementation of implementations) {
