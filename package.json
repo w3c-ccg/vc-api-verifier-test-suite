@@ -4,7 +4,7 @@
   "description": "Test Suite for Verifiers that implement the VC HTTP API.",
   "main": "tests/",
   "scripts": {
-    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"VC API Verifier Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
+    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options reportDir=\"$PWD/reports\",body=\"$PWD/body.hbs\",respec=\"$PWD/respecConfig.json\",title=\"VC API Verifier Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
     "lint": "eslint ."
   },
   "repository": {
