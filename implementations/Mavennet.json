@@ -1,6 +1,12 @@
 {
   "name": "Mavennet",
   "implementation": "neo-flow",
+  "oauth2": {
+    "clientId": "49c4bkk6a4soinkk3eru6le50j",
+    "clientSecret": "CLIENT_SECRET_MAVENNET",
+    "tokenAudience": "https://api-staging.producer.neoflow.energy/v1/credentials",
+    "tokenEndpoint": "https://api-staging.producer.neoflow.energy/v1/auth"
+  },
   "verifier": {
     "endpoint": "https://api.neo-flow.com/verifier/credentials"
   }

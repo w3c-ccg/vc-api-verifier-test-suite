@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const implementations = require('../implementations.js');
-const {verify} = require('./verify.js');
+const {Verifier} = require('./verifier.js');
 const validVC = require('../mock-data/valid-vc.json');
 const {cloneJSON, testBadRequestError} = require('./helpers');
 
@@ -28,7 +28,7 @@ describe('Verify Credential - Data Integrity', function() {
   this.reportData = reportData;
   for(const implementation of implementations) {
     columnNames.push(implementation.name);
-    const verifier = implementation.verifier;
+    const verifier = new Verifier(implementation);
     describe(implementation.name, function() {
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
@@ -37,9 +37,8 @@ describe('Verify Credential - Data Integrity', function() {
           columnId: implementation.name,
           rowId: this.test.title
         };
-        const {result, err} = await verify({
-          credential: validVC,
-          verifier
+        const {result, err} = await verifier.verify({
+          credential: validVC
         });
         should.not.exist(err);
         should.exist(result);
@@ -54,9 +53,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noContextVC = cloneJSON(validVC);
           delete noContextVC['@context'];
-          const {result, err} = await verify({
-            credential: noContextVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noContextVC
           });
           testBadRequestError({result, err});
         });
@@ -67,9 +65,8 @@ describe('Verify Credential - Data Integrity', function() {
         };
         const noTypeVC = cloneJSON(validVC);
         delete noTypeVC.type;
-        const {result, err} = await verify({
-          credential: noTypeVC,
-          verifier
+        const {result, err} = await verifier.verify({
+          credential: noTypeVC
         });
         testBadRequestError({result, err});
       });
@@ -80,9 +77,8 @@ describe('Verify Credential - Data Integrity', function() {
         };
         const noIssuerVC = cloneJSON(validVC);
         delete noIssuerVC.issuer;
-        const {result, err} = await verify({
-          credential: noIssuerVC,
-          verifier
+        const {result, err} = await verifier.verify({
+          credential: noIssuerVC
         });
         testBadRequestError({result, err});
       });
@@ -94,9 +90,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noCredentialSubjectVC = cloneJSON(validVC);
           delete noCredentialSubjectVC.credentialSubject;
-          const {result, err} = await verify({
-            credential: noCredentialSubjectVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noCredentialSubjectVC
           });
           testBadRequestError({result, err});
         });
@@ -107,9 +102,8 @@ describe('Verify Credential - Data Integrity', function() {
         };
         const noProofVC = cloneJSON(validVC);
         delete noProofVC.proof;
-        const {result, err} = await verify({
-          credential: noProofVC,
-          verifier
+        const {result, err} = await verifier.verify({
+          credential: noProofVC
         });
         testBadRequestError({result, err});
       });
@@ -121,9 +115,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noProofTypeVC = cloneJSON(validVC);
           delete noProofTypeVC.proof.type;
-          const {result, err} = await verify({
-            credential: noProofTypeVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noProofTypeVC
           });
           testBadRequestError({result, err});
         });
@@ -135,9 +128,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noProofCreatedVC = cloneJSON(validVC);
           delete noProofCreatedVC.proof.created;
-          const {result, err} = await verify({
-            credential: noProofCreatedVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noProofCreatedVC
           });
           testBadRequestError({result, err});
         });
@@ -149,9 +141,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noProofVerificationMethodVC = cloneJSON(validVC);
           delete noProofVerificationMethodVC.proof.verificationMethod;
-          const {result, err} = await verify({
-            credential: noProofVerificationMethodVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noProofVerificationMethodVC
           });
           testBadRequestError({result, err});
         });
@@ -163,9 +154,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noProofValueVC = cloneJSON(validVC);
           delete noProofValueVC.proof.proofValue;
-          const {result, err} = await verify({
-            credential: noProofValueVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noProofValueVC
           });
           testBadRequestError({result, err});
         });
@@ -177,9 +167,8 @@ describe('Verify Credential - Data Integrity', function() {
           };
           const noProofPurposeVC = cloneJSON(validVC);
           delete noProofPurposeVC.proof.proofPurpose;
-          const {result, err} = await verify({
-            credential: noProofPurposeVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: noProofPurposeVC
           });
           testBadRequestError({result, err});
         });
@@ -192,9 +181,8 @@ describe('Verify Credential - Data Integrity', function() {
         const invalidContextTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidContextType of invalidContextTypes) {
           copyVC['@context'] = invalidContextType;
-          const {result, err} = await verify({
-            credential: copyVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: copyVC
           });
           testBadRequestError({result, err});
         }
@@ -209,9 +197,8 @@ describe('Verify Credential - Data Integrity', function() {
           const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
             copyVC['@context'] = [invalidContextItemType];
-            const {result, err} = await verify({
-              credential: copyVC,
-              verifier
+            const {result, err} = await verifier.verify({
+              credential: copyVC
             });
             testBadRequestError({result, err});
           }
@@ -225,9 +212,8 @@ describe('Verify Credential - Data Integrity', function() {
         const invalidTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidType of invalidTypes) {
           copyVC.type = invalidType;
-          const {result, err} = await verify({
-            credential: copyVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: copyVC
           });
           testBadRequestError({result, err});
         }
@@ -241,9 +227,8 @@ describe('Verify Credential - Data Integrity', function() {
         const invalidTypeItemTypes = [[], {}, null, undefined, 10, true];
         for(const invalidItemType of invalidTypeItemTypes) {
           copyVC.type = [invalidItemType];
-          const {result, err} = await verify({
-            credential: copyVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: copyVC
           });
           testBadRequestError({result, err});
         }
@@ -258,9 +243,8 @@ describe('Verify Credential - Data Integrity', function() {
           const invalidIssuerTypes = [[], null, undefined, 10, true];
           for(const invalidIssuerType of invalidIssuerTypes) {
             copyVC.issuer = invalidIssuerType;
-            const {result, err} = await verify({
-              credential: copyVC,
-              verifier
+            const {result, err} = await verifier.verify({
+              credential: copyVC
             });
             testBadRequestError({result, err});
           }
@@ -277,9 +261,8 @@ describe('Verify Credential - Data Integrity', function() {
           ];
           for(const invalidType of invalidCredentialSubjectTypes) {
             copyVC.credentialSubject = invalidType;
-            const {result, err} = await verify({
-              credential: copyVC,
-              verifier
+            const {result, err} = await verifier.verify({
+              credential: copyVC
             });
             testBadRequestError({result, err});
           }
@@ -293,9 +276,8 @@ describe('Verify Credential - Data Integrity', function() {
         const invalidProofTypes = ['string', null, undefined, 10, true, []];
         for(const invalidProofType of invalidProofTypes) {
           copyVC.proof = invalidProofType;
-          const {result, err} = await verify({
-            credential: copyVC,
-            verifier
+          const {result, err} = await verifier.verify({
+            credential: copyVC
           });
           testBadRequestError({result, err});
         }

@@ -1,6 +1,12 @@
 {
   "name": "Transmute",
   "implementation": "transmute",
+  "oauth2": {
+    "clientId": "CGACwnX3KuIk9bfNgb7pSAd9SZxdCAEl",
+    "clientSecret": "CLIENT_SECRET_PLATFORM_TRANSMUTE_INDUSTRIES",
+    "tokenAudience": "https://platform.transmute.industries",
+    "tokenEndpoint": "https://transmute-industries.auth0.com/oauth/token"
+  },
   "verifier": {
     "endpoint": "https://vc.transmute.world/next/credentials/verify"
   }
