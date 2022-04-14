@@ -40,8 +40,19 @@ function testBadRequestError({result, error}) {
   error.status.should.equal(400, 'Expected status code 400 Bad Request');
 }
 
+function createBody({vc}) {
+  const body = {
+    verifiableCredential: vc,
+    options: {
+      checks: ['proof'],
+    }
+  };
+  return body;
+}
+
 module.exports = {
   cloneJSON,
+  createBody,
   getZcapClient,
   testBadRequestError
 };
