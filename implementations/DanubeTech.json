@@ -1,7 +1,0 @@
-{
-  "name": "Danube Tech",
-  "implementation": "uni",
-  "verifier": {
-    "endpoint": "https://univerifier.io/1.0/credentials/verify"
-  }
-}
