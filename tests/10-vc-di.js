@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const {implementations} = require('vc-api-test-suite-implementations');
-const validVC = require('../mock-data/valid-vc.json');
+const validVC = require('../mock-data/valid-vc-di.json');
 const {cloneJSON, testBadRequestError, createBody} = require('./helpers');
 
 const should = chai.should();
