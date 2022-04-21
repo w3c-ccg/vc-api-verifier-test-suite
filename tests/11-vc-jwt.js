@@ -5,8 +5,9 @@
 
 const chai = require('chai');
 const {implementations} = require('vc-api-test-suite-implementations');
-const validVC = require('../mock-data/valid-vc-jwt.json');
-const {cloneJSON, testBadRequestError, createBody} = require('./helpers');
+const {klona} = require('klona');
+const {testBadRequestError, createBody} = require('./helpers');
+const validVc = require('../mock-data/valid-vc-di.json');
 
 const should = chai.should();
 
@@ -37,7 +38,7 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const body = createBody({vc: validVC});
+        const body = createBody({vc: validVc});
         const {result, error} = await verifier.verify({body});
         should.not.exist(error);
         should.exist(result);
@@ -50,9 +51,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noContextVC = cloneJSON(validVC);
-          delete noContextVC['@context'];
-          const body = createBody({vc: noContextVC});
+          const noContextVc = klona(validVc);
+          delete noContextVc['@context'];
+          const body = createBody({vc: noContextVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -61,9 +62,9 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const noTypeVC = cloneJSON(validVC);
-        delete noTypeVC.type;
-        const body = createBody({vc: noTypeVC});
+        const noTypeVc = klona(validVc);
+        delete noTypeVc.type;
+        const body = createBody({vc: noTypeVc});
         const {result, error} = await verifier.verify({body});
         testBadRequestError({result, error});
       });
@@ -72,9 +73,9 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const noIssuerVC = cloneJSON(validVC);
-        delete noIssuerVC.issuer;
-        const body = createBody({vc: noIssuerVC});
+        const noIssuerVc = klona(validVc);
+        delete noIssuerVc.issuer;
+        const body = createBody({vc: noIssuerVc});
         const {result, error} = await verifier.verify({body});
         testBadRequestError({result, error});
       });
@@ -84,9 +85,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noCredentialSubjectVC = cloneJSON(validVC);
-          delete noCredentialSubjectVC.credentialSubject;
-          const body = createBody({vc: noCredentialSubjectVC});
+          const noCredentialSubjectVc = klona(validVc);
+          delete noCredentialSubjectVc.credentialSubject;
+          const body = createBody({vc: noCredentialSubjectVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -95,9 +96,9 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const noProofVC = cloneJSON(validVC);
-        delete noProofVC.proof;
-        const body = createBody({vc: noProofVC});
+        const noProofVc = klona(validVc);
+        delete noProofVc.proof;
+        const body = createBody({vc: noProofVc});
         const {result, error} = await verifier.verify({body});
         testBadRequestError({result, error});
       });
@@ -107,9 +108,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noProofTypeVC = cloneJSON(validVC);
-          delete noProofTypeVC.proof.type;
-          const body = createBody({vc: noProofTypeVC});
+          const noProofTypeVc = klona(validVc);
+          delete noProofTypeVc.proof.type;
+          const body = createBody({vc: noProofTypeVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -119,9 +120,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noProofCreatedVC = cloneJSON(validVC);
-          delete noProofCreatedVC.proof.created;
-          const body = createBody({vc: noProofCreatedVC});
+          const noProofCreatedVc = klona(validVc);
+          delete noProofCreatedVc.proof.created;
+          const body = createBody({vc: noProofCreatedVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -131,9 +132,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noProofVerificationMethodVC = cloneJSON(validVC);
-          delete noProofVerificationMethodVC.proof.verificationMethod;
-          const body = createBody({vc: noProofVerificationMethodVC});
+          const noProofVerificationMethodVc = klona(validVc);
+          delete noProofVerificationMethodVc.proof.verificationMethod;
+          const body = createBody({vc: noProofVerificationMethodVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -143,9 +144,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noProofValueVC = cloneJSON(validVC);
-          delete noProofValueVC.proof.proofValue;
-          const body = createBody({vc: noProofValueVC});
+          const noProofValueVc = klona(validVc);
+          delete noProofValueVc.proof.proofValue;
+          const body = createBody({vc: noProofValueVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -155,9 +156,9 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const noProofPurposeVC = cloneJSON(validVC);
-          delete noProofPurposeVC.proof.proofPurpose;
-          const body = createBody({vc: noProofPurposeVC});
+          const noProofPurposeVc = klona(validVc);
+          delete noProofPurposeVc.proof.proofPurpose;
+          const body = createBody({vc: noProofPurposeVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         });
@@ -166,11 +167,11 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const copyVC = cloneJSON(validVC);
+        const copyVc = klona(validVc);
         const invalidContextTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidContextType of invalidContextTypes) {
-          copyVC['@context'] = invalidContextType;
-          const body = createBody({vc: copyVC});
+          copyVc['@context'] = invalidContextType;
+          const body = createBody({vc: copyVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         }
@@ -181,11 +182,11 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const copyVC = cloneJSON(validVC);
+          const copyVc = klona(validVc);
           const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
-            copyVC['@context'] = [invalidContextItemType];
-            const body = createBody({vc: copyVC});
+            copyVc['@context'] = [invalidContextItemType];
+            const body = createBody({vc: copyVc});
             const {result, error} = await verifier.verify({body});
             testBadRequestError({result, error});
           }
@@ -195,11 +196,11 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const copyVC = cloneJSON(validVC);
+        const copyVc = klona(validVc);
         const invalidTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidType of invalidTypes) {
-          copyVC.type = invalidType;
-          const body = createBody({vc: copyVC});
+          copyVc.type = invalidType;
+          const body = createBody({vc: copyVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         }
@@ -209,11 +210,11 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const copyVC = cloneJSON(validVC);
+        const copyVc = klona(validVc);
         const invalidTypeItemTypes = [[], {}, null, undefined, 10, true];
         for(const invalidItemType of invalidTypeItemTypes) {
-          copyVC.type = [invalidItemType];
-          const body = createBody({vc: copyVC});
+          copyVc.type = [invalidItemType];
+          const body = createBody({vc: copyVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         }
@@ -224,11 +225,11 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const copyVC = cloneJSON(validVC);
+          const copyVc = klona(validVc);
           const invalidIssuerTypes = [[], null, undefined, 10, true];
           for(const invalidIssuerType of invalidIssuerTypes) {
-            copyVC.issuer = invalidIssuerType;
-            const body = createBody({vc: copyVC});
+            copyVc.issuer = invalidIssuerType;
+            const body = createBody({vc: copyVc});
             const {result, error} = await verifier.verify({body});
             testBadRequestError({result, error});
           }
@@ -239,13 +240,13 @@ describe.skip('Verify Credential - JWT', function() {
             columnId: name,
             rowId: this.test.title
           };
-          const copyVC = cloneJSON(validVC);
+          const copyVc = klona(validVc);
           const invalidCredentialSubjectTypes = [
             'string', null, undefined, 10, true, []
           ];
           for(const invalidType of invalidCredentialSubjectTypes) {
-            copyVC.credentialSubject = invalidType;
-            const body = createBody({vc: copyVC});
+            copyVc.credentialSubject = invalidType;
+            const body = createBody({vc: copyVc});
             const {result, error} = await verifier.verify({body});
             testBadRequestError({result, error});
           }
@@ -255,11 +256,11 @@ describe.skip('Verify Credential - JWT', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const copyVC = cloneJSON(validVC);
+        const copyVc = klona(validVc);
         const invalidProofTypes = ['string', null, undefined, 10, true, []];
         for(const invalidProofType of invalidProofTypes) {
-          copyVC.proof = invalidProofType;
-          const body = createBody({vc: copyVC});
+          copyVc.proof = invalidProofType;
+          const body = createBody({vc: copyVc});
           const {result, error} = await verifier.verify({body});
           testBadRequestError({result, error});
         }
