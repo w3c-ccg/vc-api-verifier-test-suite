@@ -1,0 +1,7 @@
+{
+  "name": "SecureKey",
+  "implementation": "TrustBloc (Sandbox)",
+  "verifier": {
+    "endpoint": "https://verifier-vcs.sandbox.trustbloc.dev/vc-verifier-interop/verifier/credentials/verify"
+  }
+}
