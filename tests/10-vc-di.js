@@ -4,12 +4,15 @@
 'use strict';
 
 const chai = require('chai');
-const {implementations} = require('vc-api-test-suite-implementations');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
 const {testBadRequestError, createBody} = require('./helpers');
 const validVc = require('../mock-data/valid-vc-di.json');
 
 const should = chai.should();
+
+// only use implementations with `VC-API` verifiers.
+const {match, nonMatch} = filterByTag({verifierTags: ['VC-API']});
 
 describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
@@ -26,10 +29,11 @@ describe('Verify Credential - Data Integrity', function() {
   this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  for(const [verifierName, {verifiers}] of implementations) {
+  this.notImplemented = [...nonMatch.keys()];
+  for(const [verifierName, {verifiers}] of match) {
     columnNames.push(verifierName);
     const verifier = verifiers.find(
-      verifier => verifier.tags.has('VC-HTTP-API'));
+      verifier => verifier.tags.has('VC-API'));
     describe(verifierName, function() {
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix

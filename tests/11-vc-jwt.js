@@ -29,7 +29,7 @@ describe.skip('Verify Credential - JWT', function() {
   for(const [name, implementation] of implementations) {
     columnNames.push(name);
     const verifier = implementation.verifiers.find(
-      verifier => verifier.tags.has('VC-HTTP-API'));
+      verifier => verifier.tags.has('VC-API'));
     describe(name, function() {
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix

@@ -29,9 +29,9 @@
     "chai": "^4.3.6",
     "klona": "^2.0.5",
     "mocha": "^9.2.2",
-    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
+    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-more-status-marks",
     "require-dir": "^1.2.0",
-    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#initial"
+    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#add-filter-map"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
