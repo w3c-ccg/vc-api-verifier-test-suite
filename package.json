@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalbazaar/vc-api-verifier-test-suite.git"
+    "url": "git+https://github.com/w3c-ccg/vc-api-verifier-test-suite.git"
   },
   "author": {
     "name": "Digital Bazaar, Inc.",
@@ -17,21 +17,21 @@
     "url": "https://digitalbazaar.com/"
   },
   "bugs": {
-    "url": "https://github.com/digitalbazaar/vc-api-verifier-test-suite/issues"
+    "url": "https://github.com/w3c-ccg/vc-api-verifier-test-suite/issues"
   },
   "keywords": [
     "test",
     "vc",
     "api"
   ],
-  "homepage": "https://github.com/digitalbazaar/vc-api-verifier-test-suite#readme",
+  "homepage": "https://github.com/w3c-ccg/vc-api-verifier-test-suite#readme",
   "dependencies": {
     "chai": "^4.3.6",
     "klona": "^2.0.5",
     "mocha": "^9.2.2",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-more-status-marks",
     "require-dir": "^1.2.0",
-    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
