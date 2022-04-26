@@ -2,7 +2,6 @@ name: Generate Interop Report
 
 on:
   workflow_dispatch:
-  push:
   schedule:
     # update the integration suite once per week at Sunday 5am UTC
     - cron: '5 0 * * 0'
