@@ -17,21 +17,18 @@ const {match, nonMatch} = filterByTag({verifierTags: ['VC-API']});
 describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
   this.summary = summaries;
-  // column names for the matrix go here
-  const columnNames = [];
   const reportData = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.columns = columnNames;
+  this.implemented = [...match.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
   this.notImplemented = [...nonMatch.keys()];
   for(const [verifierName, {verifiers}] of match) {
-    columnNames.push(verifierName);
     const verifier = verifiers.find(
       verifier => verifier.tags.has('VC-API'));
     describe(verifierName, function() {
