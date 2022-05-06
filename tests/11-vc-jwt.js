@@ -4,38 +4,41 @@
 'use strict';
 
 const chai = require('chai');
-const {implementations} = require('vc-api-test-suite-implementations');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
 const {testBadRequestError, createBody} = require('./helpers');
 const validVc = require('../mock-data/valid-vc-di.json');
 
 const should = chai.should();
 
-describe.skip('Verify Credential - JWT', function() {
+// only use implementations with `JWT` verifiers.
+const {match, nonMatch} = filterByTag({verifierTags: ['JWT']});
+
+console.log(match, '<><><><>match');
+console.log(nonMatch, '<><><><>nonMatch');
+describe('Verify Credential - JWT', function() {
   const summaries = new Set();
   this.summary = summaries;
-  // column names for the matrix go here
-  const columnNames = [];
   const reportData = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.columns = columnNames;
+  this.implemented = [...match.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  for(const [name, implementation] of implementations) {
-    columnNames.push(name);
-    const verifier = implementation.verifiers.find(
-      verifier => verifier.tags.has('VC-API'));
-    describe(name, function() {
+  this.notImplemented = [...nonMatch.keys()];
+  for(const [verifierName, {verifiers}] of match) {
+    const verifier = verifiers.find(
+      verifier => verifier.tags.has('JWT'));
+    describe(verifierName, function() {
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
         // the result goes in
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const body = createBody({vc: validVc});
@@ -48,7 +51,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "@context" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noContextVc = klona(validVc);
@@ -59,7 +62,7 @@ describe.skip('Verify Credential - JWT', function() {
         });
       it('MUST not verify if "type" property is missing.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const noTypeVc = klona(validVc);
@@ -70,7 +73,7 @@ describe.skip('Verify Credential - JWT', function() {
       });
       it('MUST not verify if "issuer" property is missing.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const noIssuerVc = klona(validVc);
@@ -82,7 +85,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "credentialSubject" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noCredentialSubjectVc = klona(validVc);
@@ -93,7 +96,7 @@ describe.skip('Verify Credential - JWT', function() {
         });
       it('MUST not verify if "proof" property is missing.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const noProofVc = klona(validVc);
@@ -105,7 +108,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "proof.type" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noProofTypeVc = klona(validVc);
@@ -117,7 +120,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "proof.created" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noProofCreatedVc = klona(validVc);
@@ -129,7 +132,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "proof.verificationMethod" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noProofVerificationMethodVc = klona(validVc);
@@ -141,7 +144,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "proof.proofValue" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noProofValueVc = klona(validVc);
@@ -153,7 +156,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "proof.proofPurpose" property is missing.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const noProofPurposeVc = klona(validVc);
@@ -164,7 +167,7 @@ describe.skip('Verify Credential - JWT', function() {
         });
       it('MUST not verify if "@context" is not an array.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const copyVc = klona(validVc);
@@ -179,7 +182,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "@context" items are not strings.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const copyVc = klona(validVc);
@@ -193,7 +196,7 @@ describe.skip('Verify Credential - JWT', function() {
         });
       it('MUST not verify if "type" is not an array.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const copyVc = klona(validVc);
@@ -207,7 +210,7 @@ describe.skip('Verify Credential - JWT', function() {
       });
       it('MUST not verify if "type" items are not strings.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const copyVc = klona(validVc);
@@ -222,7 +225,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "issuer" is not an object or a string.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const copyVc = klona(validVc);
@@ -237,7 +240,7 @@ describe.skip('Verify Credential - JWT', function() {
       it('MUST not verify if "credentialSubject" is not an object.',
         async function() {
           this.test.cell = {
-            columnId: name,
+            columnId: verifierName,
             rowId: this.test.title
           };
           const copyVc = klona(validVc);
@@ -253,7 +256,7 @@ describe.skip('Verify Credential - JWT', function() {
         });
       it('MUST not verify if "proof" is not an object.', async function() {
         this.test.cell = {
-          columnId: name,
+          columnId: verifierName,
           rowId: this.test.title
         };
         const copyVc = klona(validVc);
