@@ -14,8 +14,6 @@ const should = chai.should();
 // only use implementations with `JWT` verifiers.
 const {match, nonMatch} = filterByTag({verifierTags: ['JWT']});
 
-console.log(match, '<><><><>match');
-console.log(nonMatch, '<><><><>nonMatch');
 describe('Verify Credential - JWT', function() {
   const summaries = new Set();
   this.summary = summaries;
