@@ -14,7 +14,7 @@ function testBadRequestError({result, error}) {
   error.status.should.equal(400, 'Expected status code 400 Bad Request');
 }
 
-function createBody({vc}) {
+function createRequestBody({vc}) {
   const body = {
     verifiableCredential: vc,
     options: {
@@ -25,6 +25,6 @@ function createBody({vc}) {
 }
 
 module.exports = {
-  createBody,
+  createRequestBody,
   testBadRequestError
 };
