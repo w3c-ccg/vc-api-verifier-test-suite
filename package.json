@@ -30,7 +30,6 @@
     "klona": "^2.0.5",
     "mocha": "^9.2.2",
     "@digitalbazaar/mocha-w3c-interop-reporter": "digitalbazaar/mocha-w3c-interop-reporter#add-new-test-statistics-template",
-    "require-dir": "^1.2.0",
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
