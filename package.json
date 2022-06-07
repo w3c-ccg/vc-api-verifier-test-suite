@@ -17,6 +17,9 @@
     "email": "support@digitalbazaar.com",
     "url": "https://digitalbazaar.com/"
   },
+  "engines": {
+    "node": ">=14.18.0"
+  },
   "bugs": {
     "url": "https://github.com/w3c-ccg/vc-api-verifier-test-suite/issues"
   },
