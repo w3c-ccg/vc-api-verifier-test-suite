@@ -38,14 +38,16 @@ describe('Verify Credential - Data Integrity', function() {
     describe(verifierName, function() {
       let validVc;
       before(async function() {
-        const issuer = matchingIssuers.get('Digital Bazaar').issuers.find(
-          issuer => issuer.tags.has('VC-API'));
-        const {issuer: {id: issuerId}} = issuer;
-        const body = {credential: klona(vc)};
+        const issuer = matchingIssuers.get('Danube Tech').issuers.find(
+          issuer => issuer.tags.has('Ed25519Signature2020'));
+        const {issuer: {id: issuerId, options}} = issuer;
+        const body = {credential: klona(vc), options};
         body.credential.id = `urn:uuid:${uuidv4()}`;
         body.credential.issuer = issuerId;
         const {data} = await issuer.issue({body});
         validVc = data;
+        validVc['@context'].push(
+          'https://w3id.org/security/suites/ed25519-2020/v1');
       });
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
