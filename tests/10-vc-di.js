@@ -46,8 +46,6 @@ describe('Verify Credential - Data Integrity', function() {
         body.credential.issuer = issuerId;
         const {data} = await issuer.issue({body});
         validVc = data;
-        validVc['@context'].push(
-          'https://w3id.org/security/suites/ed25519-2020/v1');
       });
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
