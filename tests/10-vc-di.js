@@ -6,13 +6,17 @@
 const chai = require('chai');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
-const {testBadRequestError, createRequestBody} = require('./helpers');
-const validVc = require('../mock-data/valid-vc-di.json');
-
 const should = chai.should();
+const {testBadRequestError, createRequestBody} = require('./helpers');
+const {v4: uuidv4} = require('uuid');
+const vc = require('../mock-data/vc.json');
 
 // only use implementations with `VC-API` verifiers.
-const {match, nonMatch} = filterByTag({verifierTags: ['VC-API']});
+const {
+  match: matchingVerifiers,
+  nonMatch: nonMatchingVerifiers
+} = filterByTag({verifierTags: ['VC-API']});
+const {match: matchingIssuers} = filterByTag({issuerTags: ['VC-API']});
 
 describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
@@ -22,16 +26,27 @@ describe('Verify Credential - Data Integrity', function() {
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.implemented = [...match.keys()];
+  this.implemented = [...matchingVerifiers.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  this.notImplemented = [...nonMatch.keys()];
-  for(const [verifierName, {verifiers}] of match) {
+  this.notImplemented = [...nonMatchingVerifiers.keys()];
+  for(const [verifierName, {verifiers}] of matchingVerifiers) {
     const verifier = verifiers.find(
       verifier => verifier.tags.has('VC-API'));
     describe(verifierName, function() {
+      let validVc;
+      before(async function() {
+        const issuer = matchingIssuers.get('Digital Bazaar').issuers.find(
+          issuer => issuer.tags.has('VC-API'));
+        const {issuer: {id: issuerId}} = issuer;
+        const body = {credential: klona(vc)};
+        body.credential.id = `urn:uuid:${uuidv4()}`;
+        body.credential.issuer = issuerId;
+        const {data} = await issuer.issue({body});
+        validVc = data;
+      });
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
         // the result goes in
