@@ -5,6 +5,7 @@
 
 const chai = require('chai');
 const {filterByTag} = require('vc-api-test-suite-implementations');
+const {issuerName} = require('./test-config.js');
 const {klona} = require('klona');
 const should = chai.should();
 const {testBadRequestError, createRequestBody} = require('./helpers');
@@ -38,7 +39,7 @@ describe('Verify Credential - Data Integrity', function() {
     describe(verifierName, function() {
       let validVc;
       before(async function() {
-        const issuer = matchingIssuers.get('Danube Tech').issuers.find(
+        const issuer = matchingIssuers.get(issuerName).issuers.find(
           issuer => issuer.tags.has('Ed25519Signature2020'));
         const {issuer: {id: issuerId, options}} = issuer;
         const body = {credential: klona(vc), options};
