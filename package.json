@@ -37,8 +37,8 @@
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#convert-to-module"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-config-digitalbazaar": "^2.8.0",
+    "eslint": "^8.18.0",
+    "eslint-config-digitalbazaar": "^3.0.0",
     "eslint-plugin-jsdoc": "^38.0.6",
     "eslint-plugin-unicorn": "^42.0.0"
   }

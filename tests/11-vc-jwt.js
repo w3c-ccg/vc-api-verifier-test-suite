@@ -3,16 +3,15 @@
  */
 import chai from 'chai';
 import {filterByTag} from 'vc-api-test-suite-implementations';
+import {issuerName} from './test-config.js';
 import {klona} from 'klona';
 import {testBadRequestError, createRequestBody} from './helpers.js';
+import {v4 as uuidv4} from 'uuid';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
-const {issuerName} = require('./test-config.js');
 const vc = require('../mock-data/vc.json');
 
 const should = chai.should();
-const {testBadRequestError, createBody} = require('./helpers');
-const {v4: uuidv4} = require('uuid');
 
 // only use implementations with `JWT` verifiers.
 const {
