@@ -26,6 +26,9 @@ npm i
 npm test
 ```
 
+Note: The default issuer is set to `Digital Bazaar`, you can change the
+issuer by setting the `ISSUER_NAME` env variable.
+
 ## Implementation
 To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
 Add the tag `VC-API` to the issuers and verifiers you want tested.
