@@ -1,13 +1,13 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import {createRequestBody, testBadRequestError} from './helpers.js';
 import chai from 'chai';
+import {createRequire} from 'node:module';
 import {filterByTag} from 'vc-api-test-suite-implementations';
 import {issuerName} from './test-config.js';
 import {klona} from 'klona';
-import {testBadRequestError, createRequestBody} from './helpers.js';
 import {v4 as uuidv4} from 'uuid';
-import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const vc = require('../mock-data/vc.json');
 
@@ -45,8 +45,8 @@ describe('Verify Credential - JWT', function() {
       before(async function() {
         const issuer = matchingIssuers.get(issuerName).issuers.find(
           issuer => issuer.tags.has('JWT'));
-        const {settings: {id: issuerId}} = issuer;
-        const body = {credential: klona(vc)};
+        const {settings: {id: issuerId, options}} = issuer;
+        const body = {credential: klona(vc), options};
         body.credential.id = `urn:uuid:${uuidv4()}`;
         body.credential.issuer = issuerId;
         const {data} = await issuer.post({json: body});
