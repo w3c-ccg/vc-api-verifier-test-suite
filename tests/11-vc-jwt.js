@@ -44,11 +44,11 @@ describe('Verify Credential - JWT', function() {
       before(async function() {
         const issuer = matchingIssuers.get(issuerName).issuers.find(
           issuer => issuer.tags.has('JWT'));
-        const {issuer: {id: issuerId}} = issuer;
+        const {settings: {id: issuerId}} = issuer;
         const body = {credential: klona(vc)};
         body.credential.id = `urn:uuid:${uuidv4()}`;
         body.credential.issuer = issuerId;
-        const {data} = await issuer.issue({body});
+        const {data} = await issuer.post({json: body});
         validVc = data;
       });
       it('MUST verify a valid VC.', async function() {
