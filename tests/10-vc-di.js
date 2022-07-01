@@ -16,8 +16,11 @@ const vc = require('../mock-data/vc.json');
 const {
   match: matchingVerifiers,
   nonMatch: nonMatchingVerifiers
-} = filterByTag({verifierTags: ['VC-API']});
-const {match: matchingIssuers} = filterByTag({issuerTags: ['VC-API']});
+} = filterByTag({property: 'verifiers', tags: ['VC-API']});
+const {match: matchingIssuers} = filterByTag({
+  property: 'issuers',
+  tags: ['VC-API']
+});
 
 describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
@@ -56,7 +59,7 @@ describe('Verify Credential - Data Integrity', function() {
           rowId: this.test.title
         };
         const body = createRequestBody({vc: validVc});
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         should.not.exist(error);
         should.exist(result);
         should.exist(result.status);
@@ -71,7 +74,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noContextVc = klona(validVc);
           delete noContextVc['@context'];
           const body = createRequestBody({vc: noContextVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "type" property is missing.', async function() {
@@ -82,7 +85,7 @@ describe('Verify Credential - Data Integrity', function() {
         const noTypeVc = klona(validVc);
         delete noTypeVc.type;
         const body = createRequestBody({vc: noTypeVc});
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
       it('MUST not verify if "issuer" property is missing.', async function() {
@@ -93,7 +96,7 @@ describe('Verify Credential - Data Integrity', function() {
         const noIssuerVc = klona(validVc);
         delete noIssuerVc.issuer;
         const body = createRequestBody({vc: noIssuerVc});
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
       it('MUST not verify if "credentialSubject" property is missing.',
@@ -105,7 +108,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noCredentialSubjectVc = klona(validVc);
           delete noCredentialSubjectVc.credentialSubject;
           const body = createRequestBody({vc: noCredentialSubjectVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "proof" property is missing.', async function() {
@@ -116,7 +119,7 @@ describe('Verify Credential - Data Integrity', function() {
         const noProofVc = klona(validVc);
         delete noProofVc.proof;
         const body = createRequestBody({vc: noProofVc});
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
       it('MUST not verify if "proof.type" property is missing.',
@@ -128,7 +131,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noProofTypeVc = klona(validVc);
           delete noProofTypeVc.proof.type;
           const body = createRequestBody({vc: noProofTypeVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "proof.created" property is missing.',
@@ -140,7 +143,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noProofCreatedVc = klona(validVc);
           delete noProofCreatedVc.proof.created;
           const body = createRequestBody({vc: noProofCreatedVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "proof.verificationMethod" property is missing.',
@@ -152,7 +155,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noProofVerificationMethodVc = klona(validVc);
           delete noProofVerificationMethodVc.proof.verificationMethod;
           const body = createRequestBody({vc: noProofVerificationMethodVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "proof.proofValue" property is missing.',
@@ -164,7 +167,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noProofValueVc = klona(validVc);
           delete noProofValueVc.proof.proofValue;
           const body = createRequestBody({vc: noProofValueVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "proof.proofPurpose" property is missing.',
@@ -176,7 +179,7 @@ describe('Verify Credential - Data Integrity', function() {
           const noProofPurposeVc = klona(validVc);
           delete noProofPurposeVc.proof.proofPurpose;
           const body = createRequestBody({vc: noProofPurposeVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
       it('MUST not verify if "@context" is not an array.', async function() {
@@ -189,7 +192,7 @@ describe('Verify Credential - Data Integrity', function() {
         for(const invalidContextType of invalidContextTypes) {
           copyVc['@context'] = invalidContextType;
           const body = createRequestBody({vc: copyVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
       });
@@ -204,7 +207,7 @@ describe('Verify Credential - Data Integrity', function() {
           for(const invalidContextItemType of invalidContextItemTypes) {
             copyVc['@context'] = [invalidContextItemType];
             const body = createRequestBody({vc: copyVc});
-            const {result, error} = await verifier.verify({body});
+            const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
         });
@@ -218,7 +221,7 @@ describe('Verify Credential - Data Integrity', function() {
         for(const invalidType of invalidTypes) {
           copyVc.type = invalidType;
           const body = createRequestBody({vc: copyVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
       });
@@ -232,7 +235,7 @@ describe('Verify Credential - Data Integrity', function() {
         for(const invalidItemType of invalidTypeItemTypes) {
           copyVc.type = [invalidItemType];
           const body = createRequestBody({vc: copyVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
       });
@@ -247,7 +250,7 @@ describe('Verify Credential - Data Integrity', function() {
           for(const invalidIssuerType of invalidIssuerTypes) {
             copyVc.issuer = invalidIssuerType;
             const body = createRequestBody({vc: copyVc});
-            const {result, error} = await verifier.verify({body});
+            const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
         });
@@ -264,7 +267,7 @@ describe('Verify Credential - Data Integrity', function() {
           for(const invalidType of invalidCredentialSubjectTypes) {
             copyVc.credentialSubject = invalidType;
             const body = createRequestBody({vc: copyVc});
-            const {result, error} = await verifier.verify({body});
+            const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
         });
@@ -278,7 +281,7 @@ describe('Verify Credential - Data Integrity', function() {
         for(const invalidProofType of invalidProofTypes) {
           copyVc.proof = invalidProofType;
           const body = createRequestBody({vc: copyVc});
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
       });
