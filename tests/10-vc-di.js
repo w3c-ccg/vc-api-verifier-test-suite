@@ -44,11 +44,11 @@ describe('Verify Credential - Data Integrity', function() {
       before(async function() {
         const issuer = matchingIssuers.get(issuerName).issuers.find(
           issuer => issuer.tags.has('Ed25519Signature2020'));
-        const {issuer: {id: issuerId, options}} = issuer;
+        const {settings: {id: issuerId, options}} = issuer;
         const body = {credential: klona(vc), options};
         body.credential.id = `urn:uuid:${uuidv4()}`;
         body.credential.issuer = issuerId;
-        const {data} = await issuer.issue({body});
+        const {data} = await issuer.post({json: body});
         validVc = data;
       });
       it('MUST verify a valid VC.', async function() {
