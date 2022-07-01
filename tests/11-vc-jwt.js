@@ -1,16 +1,18 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {klona} from 'klona';
+import {testBadRequestError, createRequestBody} from './helpers.js';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 const {issuerName} = require('./test-config.js');
-const {klona} = require('klona');
+const vc = require('../mock-data/vc.json');
+
 const should = chai.should();
 const {testBadRequestError, createBody} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
-const vc = require('../mock-data/vc.json');
 
 // only use implementations with `JWT` verifiers.
 const {
@@ -58,7 +60,7 @@ describe('Verify Credential - JWT', function() {
           columnId: verifierName,
           rowId: this.test.title
         };
-        const body = createBody({vc: validVc});
+        const body = createRequestBody({vc: validVc});
         const {result, error} = await verifier.post({json: body});
         should.not.exist(error);
         should.exist(result);
@@ -73,7 +75,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noContextVc = klona(validVc);
           delete noContextVc['@context'];
-          const body = createBody({vc: noContextVc});
+          const body = createRequestBody({vc: noContextVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -84,7 +86,7 @@ describe('Verify Credential - JWT', function() {
         };
         const noTypeVc = klona(validVc);
         delete noTypeVc.type;
-        const body = createBody({vc: noTypeVc});
+        const body = createRequestBody({vc: noTypeVc});
         const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
@@ -95,7 +97,7 @@ describe('Verify Credential - JWT', function() {
         };
         const noIssuerVc = klona(validVc);
         delete noIssuerVc.issuer;
-        const body = createBody({vc: noIssuerVc});
+        const body = createRequestBody({vc: noIssuerVc});
         const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
@@ -107,7 +109,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noCredentialSubjectVc = klona(validVc);
           delete noCredentialSubjectVc.credentialSubject;
-          const body = createBody({vc: noCredentialSubjectVc});
+          const body = createRequestBody({vc: noCredentialSubjectVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -118,7 +120,7 @@ describe('Verify Credential - JWT', function() {
         };
         const noProofVc = klona(validVc);
         delete noProofVc.proof;
-        const body = createBody({vc: noProofVc});
+        const body = createRequestBody({vc: noProofVc});
         const {result, error} = await verifier.post({json: body});
         testBadRequestError({result, error});
       });
@@ -130,7 +132,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noProofTypeVc = klona(validVc);
           delete noProofTypeVc.proof.type;
-          const body = createBody({vc: noProofTypeVc});
+          const body = createRequestBody({vc: noProofTypeVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -142,7 +144,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noProofCreatedVc = klona(validVc);
           delete noProofCreatedVc.proof.created;
-          const body = createBody({vc: noProofCreatedVc});
+          const body = createRequestBody({vc: noProofCreatedVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -154,7 +156,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noProofVerificationMethodVc = klona(validVc);
           delete noProofVerificationMethodVc.proof.verificationMethod;
-          const body = createBody({vc: noProofVerificationMethodVc});
+          const body = createRequestBody({vc: noProofVerificationMethodVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -166,7 +168,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noProofValueVc = klona(validVc);
           delete noProofValueVc.proof.proofValue;
-          const body = createBody({vc: noProofValueVc});
+          const body = createRequestBody({vc: noProofValueVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -178,7 +180,7 @@ describe('Verify Credential - JWT', function() {
           };
           const noProofPurposeVc = klona(validVc);
           delete noProofPurposeVc.proof.proofPurpose;
-          const body = createBody({vc: noProofPurposeVc});
+          const body = createRequestBody({vc: noProofPurposeVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         });
@@ -191,7 +193,7 @@ describe('Verify Credential - JWT', function() {
         const invalidContextTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidContextType of invalidContextTypes) {
           copyVc['@context'] = invalidContextType;
-          const body = createBody({vc: copyVc});
+          const body = createRequestBody({vc: copyVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
@@ -206,7 +208,7 @@ describe('Verify Credential - JWT', function() {
           const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
             copyVc['@context'] = [invalidContextItemType];
-            const body = createBody({vc: copyVc});
+            const body = createRequestBody({vc: copyVc});
             const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
@@ -220,7 +222,7 @@ describe('Verify Credential - JWT', function() {
         const invalidTypes = ['string', {}, null, undefined, 10, true];
         for(const invalidType of invalidTypes) {
           copyVc.type = invalidType;
-          const body = createBody({vc: copyVc});
+          const body = createRequestBody({vc: copyVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
@@ -234,7 +236,7 @@ describe('Verify Credential - JWT', function() {
         const invalidTypeItemTypes = [[], {}, null, undefined, 10, true];
         for(const invalidItemType of invalidTypeItemTypes) {
           copyVc.type = [invalidItemType];
-          const body = createBody({vc: copyVc});
+          const body = createRequestBody({vc: copyVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }
@@ -249,7 +251,7 @@ describe('Verify Credential - JWT', function() {
           const invalidIssuerTypes = [[], null, undefined, 10, true];
           for(const invalidIssuerType of invalidIssuerTypes) {
             copyVc.issuer = invalidIssuerType;
-            const body = createBody({vc: copyVc});
+            const body = createRequestBody({vc: copyVc});
             const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
@@ -266,7 +268,7 @@ describe('Verify Credential - JWT', function() {
           ];
           for(const invalidType of invalidCredentialSubjectTypes) {
             copyVc.credentialSubject = invalidType;
-            const body = createBody({vc: copyVc});
+            const body = createRequestBody({vc: copyVc});
             const {result, error} = await verifier.post({json: body});
             testBadRequestError({result, error});
           }
@@ -280,7 +282,7 @@ describe('Verify Credential - JWT', function() {
         const invalidProofTypes = ['string', null, undefined, 10, true, []];
         for(const invalidProofType of invalidProofTypes) {
           copyVc.proof = invalidProofType;
-          const body = createBody({vc: copyVc});
+          const body = createRequestBody({vc: copyVc});
           const {result, error} = await verifier.post({json: body});
           testBadRequestError({result, error});
         }

@@ -1,7 +1,6 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
 
 describe('Verify Presentation - JWT', function() {
   const summaries = new Set();
