@@ -1,16 +1,18 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {klona} from 'klona';
+import {testBadRequestError, createRequestBody} from './helpers.js';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 const {issuerName} = require('./test-config.js');
-const {klona} = require('klona');
+const vc = require('../mock-data/vc.json');
+
 const should = chai.should();
 const {testBadRequestError, createRequestBody} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
-const vc = require('../mock-data/vc.json');
 
 // only use implementations with `VC-API` verifiers.
 const {
