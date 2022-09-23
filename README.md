@@ -31,7 +31,7 @@ issuer by setting the `ISSUER_NAME` env variable.
 
 ## Implementation
 To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
-Add the tag `VC-API` to the issuers and verifiers you want tested.
+Add the tag `vc-api` to the issuers and verifiers you want tested.
 To run the tests, some implementations require client secrets that can be
 passed as env variables to the test script. To see which ones require client
 secrets, you can check the `vc-api-test-suite-implementations` library.
