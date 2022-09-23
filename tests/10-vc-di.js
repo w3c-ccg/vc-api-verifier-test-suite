@@ -12,15 +12,16 @@ import {issuerName} from './test-config.js';
 import {klona} from 'klona';
 
 const should = chai.should();
+const tag = 'vc-api';
 
-// only use implementations with `VC-API` verifiers.
+// only use implementations with `vc-api` verifiers.
 const {
   match: matchingVerifiers,
   nonMatch: nonMatchingVerifiers
-} = filterByTag({property: 'verifiers', tags: ['VC-API']});
+} = filterByTag({property: 'verifiers', tags: [tag]});
 const {match: matchingIssuers} = filterByTag({
   property: 'issuers',
-  tags: ['VC-API']
+  tags: [tag]
 });
 
 describe('Verify Credential - Data Integrity', function() {
@@ -39,7 +40,7 @@ describe('Verify Credential - Data Integrity', function() {
   this.notImplemented = [...nonMatchingVerifiers.keys()];
   for(const [verifierName, {verifiers}] of matchingVerifiers) {
     const verifier = verifiers.find(
-      verifier => verifier.tags.has('VC-API'));
+      verifier => verifier.tags.has(tag));
     describe(verifierName, function() {
       let validVc;
       before(async function() {
