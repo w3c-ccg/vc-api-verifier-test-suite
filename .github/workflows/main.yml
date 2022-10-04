@@ -44,6 +44,7 @@ jobs:
       - name: Run test with Node.js ${{ matrix.node-version }}
         env:
           CLIENT_SECRET_DB: ${{ secrets.CLIENT_SECRET_DB }}
+          KEY_SEED_DB: ${{ secrets.KEY_SEED_DB }}
           CLIENT_SECRET_MAVENNET: ${{ secrets.CLIENT_SECRET_MAVENNET }}
           CLIENT_SECRET_MESURIO_IY59: ${{ secrets.CLIENT_SECRET_MESURIO_IY59 }}
         run: npm run test
