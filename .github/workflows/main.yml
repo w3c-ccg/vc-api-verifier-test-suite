@@ -46,7 +46,7 @@ jobs:
           CLIENT_SECRET_DB: ${{ secrets.CLIENT_SECRET_DB }}
           KEY_SEED_DB: ${{ secrets.KEY_SEED_DB }}
           CLIENT_SECRET_MAVENNET: ${{ secrets.CLIENT_SECRET_MAVENNET }}
-          CLIENT_SECRET_MESURIO_IY59: ${{ secrets.CLIENT_SECRET_MESURIO }}
+          CLIENT_SECRET_MESURIO: ${{ secrets.CLIENT_SECRET_MESURIO }}
         run: npm run test
         continue-on-error: true
       - name: Deploy to Github Pages
