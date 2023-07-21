@@ -47,17 +47,18 @@
     .passed {
       font-weight: bold;
       background-color: lightgreen;
-      text-align: center;
     }
     .failed {
       font-weight: bold;
       background-color: pink;
-      text-align: center;
+    }
+    .pending {
+      font-weight: bold;
+      background-color: #cdeaed;
     }
     .unimplemented, .notImplemented {
       font-weight: bold;
       background-color: lightyellow;
-      text-align: center;
     }
     .flex-center {
       display: flex;
@@ -80,19 +81,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 148/162 91%
+      Tests passed 164/180 91%
       </p>
       <p>
-      Tests failed 15/162 10%
+      Tests failed 16/180 9%
+      </p>
+      <p>
+      Failures 16
       </p>
       <p>
       Tests skipped 0
       </p>
       <p>
-      Total tests 162
+      Total tests 180
       </p>
       <p>
-        These tests were run on <time>16 July 2023 at 5:09 am UTC</time>
+        These tests were run on <time>21 July 2023 at 10:29 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -141,9 +145,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -167,7 +168,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -178,7 +179,7 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
-                    <th class="no-wrap small-font">API Catalog</th>
+                    <th class="no-wrap small-font">apicatalog.com</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -187,16 +188,13 @@
                     <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">SpruceID</th>
-                    <th class="no-wrap small-font">GS1 US</th>
-                    <th class="no-wrap small-font">MATTR</th>
-                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">MUST verify a valid VC.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -228,7 +226,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -260,7 +258,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -292,7 +290,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -324,7 +322,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -356,7 +354,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -390,12 +388,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:60:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:58:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -427,7 +425,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -459,104 +457,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -592,7 +494,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;@context&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -624,7 +526,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -656,7 +558,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -688,7 +590,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -720,7 +622,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -752,7 +654,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -784,7 +686,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -818,12 +720,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:75:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:73:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -855,104 +757,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -988,7 +794,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;type&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1020,7 +826,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1052,7 +858,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1084,7 +890,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1116,7 +922,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1148,7 +954,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1180,7 +986,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1212,7 +1018,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1244,104 +1050,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1377,7 +1087,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;issuer&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1409,7 +1119,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1441,7 +1151,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1473,7 +1183,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1505,7 +1215,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1537,7 +1247,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1569,7 +1279,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -1603,12 +1313,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:97:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:95:9)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1640,104 +1350,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1773,7 +1387,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;credentialSubject&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1805,7 +1419,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1837,7 +1451,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1869,7 +1483,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1901,7 +1515,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1933,7 +1547,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -1965,7 +1579,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -1999,12 +1613,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:109:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:107:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2036,104 +1650,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2169,7 +1687,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2201,7 +1719,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2233,7 +1751,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2265,7 +1783,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2297,7 +1815,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2329,7 +1847,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2361,7 +1879,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2393,7 +1911,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2425,104 +1943,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2558,7 +1980,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.type&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2590,7 +2012,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2622,7 +2044,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2654,7 +2076,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2686,7 +2108,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2718,7 +2140,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2750,7 +2172,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2782,7 +2204,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2814,104 +2236,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2947,7 +2273,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.created&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -2979,7 +2305,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3011,7 +2337,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3043,7 +2369,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3075,7 +2401,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3107,7 +2433,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3139,7 +2465,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3171,7 +2497,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3203,104 +2529,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3336,7 +2566,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.verificationMethod&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3368,7 +2598,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3400,7 +2630,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3432,7 +2662,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3464,7 +2694,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3496,7 +2726,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -3530,12 +2760,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
-                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:156:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:154:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3567,7 +2797,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3599,104 +2829,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3732,7 +2866,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.proofValue&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3764,7 +2898,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3796,7 +2930,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3828,7 +2962,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3860,7 +2994,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3892,7 +3026,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -3926,12 +3060,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
-                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:168:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:166:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3963,7 +3097,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -3995,104 +3129,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4128,7 +3166,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.proofPurpose&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4160,7 +3198,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4192,7 +3230,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4224,7 +3262,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4256,7 +3294,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4288,7 +3326,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4320,7 +3358,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -4354,12 +3392,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:180:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:178:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4391,104 +3429,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4524,7 +3466,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;@context&quot; is not an array.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4556,7 +3498,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4588,7 +3530,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4620,7 +3562,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4652,7 +3594,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4684,7 +3626,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4716,7 +3658,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -4750,12 +3692,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:193:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:191:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4787,104 +3729,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4920,7 +3766,46 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;@context&quot; items are not strings.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:206:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4952,7 +3837,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -4984,7 +3869,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5016,7 +3901,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5048,7 +3933,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5080,39 +3965,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -5146,12 +3999,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:208:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:206:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5183,104 +4036,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5316,7 +4073,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;type&quot; is not an array.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5348,7 +4105,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5380,7 +4137,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5412,7 +4169,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5444,7 +4201,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5476,7 +4233,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -5510,12 +4267,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(3) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(3) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:222:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(3) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:220:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5547,7 +4304,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5579,104 +4336,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5712,7 +4373,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;type&quot; items are not strings.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5744,7 +4405,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5776,7 +4437,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5808,7 +4469,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5840,7 +4501,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5872,7 +4533,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5904,7 +4565,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5936,7 +4597,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -5968,104 +4629,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6101,7 +4666,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;issuer&quot; is not an object or a string.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6133,7 +4698,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6165,7 +4730,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6197,7 +4762,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6229,7 +4794,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6261,7 +4826,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6293,7 +4858,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -6327,12 +4892,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:251:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:249:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6364,104 +4929,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6497,7 +4966,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;credentialSubject&quot; is not an object.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6529,7 +4998,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6561,7 +5030,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6593,7 +5062,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6625,7 +5094,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6657,7 +5126,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -6691,12 +5160,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
-                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:268:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:266:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -6730,12 +5199,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:268:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(2) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:266:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6767,104 +5236,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6900,7 +5273,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof&quot; is not an object.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6932,7 +5305,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6964,7 +5337,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -6996,7 +5369,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -7028,7 +5401,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -7060,7 +5433,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover">
+                  <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
@@ -7094,12 +5467,12 @@
                         <pre>{
                       "name": "AssertionError",
                       "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
-                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:282:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:280:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -7131,7 +5504,7 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
@@ -7163,104 +5536,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover">
+                  <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -7330,9 +5607,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -7356,7 +5630,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -7368,19 +5642,681 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">SpruceID</th>
-                    <th class="no-wrap small-font">API Catalog</th>
-                    <th class="no-wrap small-font">Danube Tech</th>
-                    <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">EWF</th>
-                    <th class="no-wrap small-font">GS1 US</th>
-                    <th class="no-wrap small-font">LearnCard</th>
-                    <th class="no-wrap small-font">MATTR</th>
-                    <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
-                    <th class="no-wrap small-font">SecureKey</th>
-                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST verify a valid VC.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;@context&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;type&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;issuer&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;credentialSubject&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof.type&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof.created&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof.verificationMethod&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof.proofValue&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier: expected Response{ size: +0, data: { …(3) }, …(2) } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier: expected Response{ size: +0, data: { …(3) }, …(2) } to not exist\n    at Object.should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/11-vc-jwt.js:165:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof.proofPurpose&quot; property is missing.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;@context&quot; is not an array.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;@context&quot; items are not strings.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;type&quot; is not an array.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;type&quot; items are not strings.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;issuer&quot; is not an object or a string.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;credentialSubject&quot; is not an object.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST not verify if &quot;proof&quot; is not an object.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
             </tbody>
             </table>
           </div>
@@ -7419,9 +6355,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -7445,7 +6378,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -7496,9 +6429,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -7522,7 +6452,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
