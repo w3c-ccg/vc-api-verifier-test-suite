@@ -8,6 +8,7 @@ import {
 } from './helpers.js';
 import chai from 'chai';
 import {filterByTag} from 'vc-api-test-suite-implementations';
+import {issuerNameJWT} from './test-config.js';
 import {klona} from 'klona';
 
 const should = chai.should();
@@ -40,7 +41,7 @@ describe('Verify Credential - JWT', function() {
     describe(verifierName, function() {
       let validVc;
       before(async function() {
-        const issuer = matchingIssuers.get('SpruceID').issuers.find(
+        const issuer = matchingIssuers.get(issuerNameJWT).issuers.find(
           issuer => issuer.tags.has('JWT'));
         validVc = await createInitialVc({issuer});
       });
