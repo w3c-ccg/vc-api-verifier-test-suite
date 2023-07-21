@@ -15,8 +15,7 @@ const should = chai.should();
 
 // only use implementations with `JWT` verifiers.
 const {
-  match: matchingVerifiers,
-  nonMatch: nonMatchingVerifiers
+  match: matchingVerifiers
 } = filterByTag({property: 'verifiers', tags: ['JWT']});
 const {match: matchingIssuers} = filterByTag({
   property: 'issuers',
@@ -36,7 +35,6 @@ describe('Verify Credential - JWT', function() {
   this.columnLabel = 'Verifier';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
-  this.notImplemented = [...nonMatchingVerifiers.keys()];
   for(const [verifierName, {verifiers}] of matchingVerifiers) {
     const verifier = verifiers.find(
       verifier => verifier.tags.has('JWT'));
