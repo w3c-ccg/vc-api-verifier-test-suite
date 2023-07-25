@@ -30,7 +30,7 @@
   ],
   "homepage": "https://github.com/w3c-ccg/vc-api-verifier-test-suite#readme",
   "dependencies": {
-    "@digitalbazaar/mocha-w3c-interop-reporter": "digitalbazaar/mocha-w3c-interop-reporter",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "^1.4.0",
     "chai": "^4.3.6",
     "klona": "^2.0.5",
     "mocha": "^10.0.0",
