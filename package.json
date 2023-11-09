@@ -5,7 +5,7 @@
   "main": "tests/",
   "type": "module",
   "scripts": {
-    "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"VC API Verifier Interoperability Report 1.0\",abstract=\"$PWD/abstract.hbs\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
+    "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",suiteLog='./suite.log',templateData=\"$PWD/reports/index.json\",title=\"VC API Verifier Interoperability Report 1.0\" --timeout 15000 --preserve-symlinks",
     "lint": "eslint ."
   },
   "repository": {
@@ -30,7 +30,7 @@
   ],
   "homepage": "https://github.com/w3c-ccg/vc-api-verifier-test-suite#readme",
   "dependencies": {
-    "@digitalbazaar/mocha-w3c-interop-reporter": "^1.4.0",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "^1.5.0",
     "chai": "^4.3.6",
     "klona": "^2.0.5",
     "mocha": "^10.0.0",
