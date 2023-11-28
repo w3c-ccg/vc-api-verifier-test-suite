@@ -18,7 +18,7 @@
     "url": "https://digitalbazaar.com/"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18"
   },
   "bugs": {
     "url": "https://github.com/w3c-ccg/vc-api-verifier-test-suite/issues"
@@ -37,9 +37,9 @@
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
-    "eslint": "^8.19.0",
-    "eslint-config-digitalbazaar": "^4.0.1",
-    "eslint-plugin-jsdoc": "^39.3.3",
-    "eslint-plugin-unicorn": "^43.0.0"
+    "eslint": "^8.54.0",
+    "eslint-config-digitalbazaar": "^5.0.1",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-unicorn": "^49.0.0"
   }
 }
