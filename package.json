@@ -34,6 +34,7 @@
     "chai": "^4.3.6",
     "klona": "^2.0.5",
     "mocha": "^10.0.0",
+    "uuid": "^9.0.1",
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
