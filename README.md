@@ -1,4 +1,5 @@
 # vc-api-verifier-test-suite
+
 Test Suite for Verifiers that implement the VC HTTP API
 
 ## Table of Contents
@@ -30,8 +31,12 @@ Note: The default issuer is set to `Digital Bazaar`, you can change the
 issuer by setting the `ISSUER_NAME` env variable.
 
 ## Implementation
-To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
-Add the tag `vc-api` to the issuers and verifiers you want tested.
-To run the tests, some implementations require client secrets that can be
+
+To add your implementation to this test suite see the
+`w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tag `vc-api` to the verifiers you want
+to run the tests against.
+
+Note: To run the tests, some implementations require client secrets that can be
 passed as env variables to the test script. To see which ones require client
-secrets, you can check the `vc-api-test-suite-implementations` library.
+secrets, you can check configs in the `w3c-ccg/vc-test-suite-implementations`
+repo.

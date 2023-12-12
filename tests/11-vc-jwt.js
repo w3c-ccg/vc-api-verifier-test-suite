@@ -7,7 +7,7 @@ import {
   testBadRequestError
 } from './helpers.js';
 import chai from 'chai';
-import {filterByTag} from 'vc-api-test-suite-implementations';
+import {filterByTag} from 'vc-test-suite-implementations';
 import {issuerNameJWT} from './test-config.js';
 import {klona} from 'klona';
 

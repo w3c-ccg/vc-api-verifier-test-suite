@@ -7,7 +7,7 @@ import {
   testBadRequestError
 } from './helpers.js';
 import chai from 'chai';
-import {filterByTag} from 'vc-api-test-suite-implementations';
+import {filterByTag} from 'vc-test-suite-implementations';
 import {issuerName} from './test-config.js';
 import {klona} from 'klona';
 
@@ -43,7 +43,7 @@ describe('Verify Credential - Data Integrity', function() {
       let validVc;
       before(async function() {
         const issuer = matchingIssuers.get(issuerName).issuers.find(
-          issuer => issuer.tags.has('Ed25519Signature2020'));
+          issuer => issuer.tags.has('vc-api'));
         validVc = await createInitialVc({issuer});
       });
       it('MUST verify a valid VC.', async function() {
