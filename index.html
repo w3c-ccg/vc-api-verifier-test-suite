@@ -81,22 +81,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 182/198 91%
+      Tests passed 177/180 98%
       </p>
       <p>
-      Tests failed 16/198 9%
+      Tests failed 3/180 2%
       </p>
       <p>
-      Failures 16
+      Failures 3
       </p>
       <p>
       Tests skipped 0
       </p>
       <p>
-      Total tests 198
+      Total tests 180
       </p>
       <p>
-        These tests were run on <time>10 December 2023 at 5:09 am UTC</time>
+        These tests were run on <time>17 December 2023 at 5:08 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -185,7 +185,6 @@
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
                     <th class="no-wrap small-font text-center">Mavennet</th>
-                    <th class="no-wrap small-font text-center">mesur.io</th>
                     <th class="no-wrap small-font text-center">SecureKey</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
@@ -225,45 +224,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot construct a Request with a Request object that has already been used.",
-                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:5511:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at async Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:57:33)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -719,45 +679,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:73:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -859,38 +780,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;type&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1376,45 +1265,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:95:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1708,45 +1558,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:107:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1848,38 +1659,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -2461,38 +2240,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -2528,45 +2275,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot construct a Request with a Request object that has already been used.",
-                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:5511:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:141:35)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3125,38 +2833,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -3192,45 +2868,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot construct a Request with a Request object that has already been used.",
-                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:5511:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:165:35)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3526,45 +3163,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot construct a Request with a Request object that has already been used.",
-                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:5511:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:177:35)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -3693,8 +3291,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3723,13 +3321,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:178:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4023,45 +3614,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:191:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4364,45 +3916,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:206:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -4504,38 +4017,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;type&quot; is not an array.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -5117,38 +4598,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -5349,45 +4798,6 @@
                       "name": "AssertionError",
                       "message": "Expected no result from verifier: expected Response{ data: { …(3) }, …(3) } to not exist",
                       "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(3) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:249:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:249:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
                     }</pre>
                       </span>
                     </div>
@@ -5685,45 +5095,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:266:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -5825,38 +5196,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof&quot; is not an object.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -6558,8 +5897,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;proof.proofValue&quot; property is missing.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6588,13 +5927,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no result from verifier: expected Response{ data: { …(3) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no result from verifier: expected Response{ data: { …(3) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/11-vc-jwt.js:165:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
