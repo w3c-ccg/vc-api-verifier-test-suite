@@ -81,13 +81,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 195/198 98%
+      Tests passed 194/198 97%
       </p>
       <p>
-      Tests failed 3/198 2%
+      Tests failed 4/198 3%
       </p>
       <p>
-      Failures 3
+      Failures 4
       </p>
       <p>
       Tests skipped 0
@@ -96,7 +96,7 @@
       Total tests 198
       </p>
       <p>
-        These tests were run on <time>11 February 2024 at 5:08 am UTC</time>
+        These tests were run on <time>18 February 2024 at 5:08 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -3777,8 +3777,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST not verify if &quot;@context&quot; is not an array.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3807,6 +3807,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected status code 400 Bad Request: expected 500 to equal 400",
+                      "stack": "AssertionError: Expected status code 400 Bad Request: expected 500 to equal 400\n    at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:15:23)\n    at Context.<anonymous> (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:191:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
