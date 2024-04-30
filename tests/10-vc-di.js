@@ -181,14 +181,14 @@ describe('Verify Credential - Data Integrity', function() {
           testBadRequestError({result, error});
         }
       });
-      it('MUST not verify if "@context" items are not strings.',
+      it('MUST not verify if "@context" items are not strings or objects.',
         async function() {
           this.test.cell = {
             columnId: verifierName,
             rowId: this.test.title
           };
           const copyVc = klona(validVc);
-          const invalidContextItemTypes = [[], {}, null, undefined, 10, true];
+          const invalidContextItemTypes = [[], null, undefined, 10, true];
           for(const invalidContextItemType of invalidContextItemTypes) {
             copyVc['@context'] = [invalidContextItemType];
             const body = createRequestBody({vc: copyVc});
