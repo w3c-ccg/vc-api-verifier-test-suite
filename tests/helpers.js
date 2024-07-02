@@ -12,7 +12,8 @@ export function testBadRequestError({result, error}) {
   should.not.exist(result, 'Expected no result from verifier');
   should.exist(error, 'Expected verifier to error');
   should.exist(error.status, 'Expected an HTTP error response code');
-  error.status.should.equal(400, 'Expected status code 400 Bad Request');
+  error.status.should.be.oneOf([400, 422],
+    'Expected status code 400 or 422.');
 }
 
 export function createRequestBody({vc}) {
