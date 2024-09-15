@@ -77,7 +77,7 @@
       details.hide {
         display: none;
       }
-      details.err {
+      .err {
         position: absolute;
         z-index: 1;
         white-space: nowrap;
@@ -88,6 +88,7 @@
         box-shadow: 0 0 5px darkgray;
         min-width: 25em;
       }
+      span.err,
       details.err summary {
         color: indianred;
       }
@@ -164,22 +165,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 177/216 81%
+      Tests passed 177/198 89%
       </p>
       <p>
-      Tests failed 39/216 19%
+      Tests failed 21/198 11%
       </p>
       <p>
-      Failures 39
+      Failures 21
       </p>
       <p>
       Tests skipped 0
       </p>
       <p>
-      Total tests 216
+      Total tests 198
       </p>
       <p>
-        These tests were run on <time>8 September 2024 at 5:14 am UTC</time>
+        These tests were run on <time>15 September 2024 at 5:11 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -246,7 +247,6 @@
                     <th class="no-wrap small-font text-center">Danube Tech</th>
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
-                    <th class="no-wrap small-font text-center">IDLab</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
                     <th class="no-wrap small-font text-center">Mavennet</th>
                     <th class="no-wrap small-font text-center">Open Security and Identity</th>
@@ -281,22 +281,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:57:33)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -316,7 +300,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>expected TypeError: fetch failed { …(2) } to not exist:</summary>
+                        <summary>expected TypeError: fetch failed { …(2) } to not exist</summary>
                         <pre>AssertionError: expected TypeError: fetch failed { …(2) } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:58:20)
@@ -361,22 +345,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:72:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -396,7 +364,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -442,22 +410,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:83:33)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -477,7 +429,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -523,22 +475,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:94:33)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -558,7 +494,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -604,22 +540,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:106:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -639,7 +559,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -685,22 +605,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:117:33)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -720,7 +624,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -766,22 +670,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:129:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -801,7 +689,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -847,22 +735,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:141:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -882,7 +754,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -928,22 +800,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:153:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -953,8 +809,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:30 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist:</summary>
-                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:30 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:10:58 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:10:58 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:154:11)
@@ -971,7 +827,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1017,22 +873,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:165:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1052,7 +892,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1098,22 +938,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:177:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1133,7 +957,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1179,22 +1003,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:190:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1214,7 +1022,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1260,22 +1068,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:205:37)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1295,7 +1087,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1341,22 +1133,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:219:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1376,7 +1152,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1422,22 +1198,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:233:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1457,7 +1217,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1503,22 +1263,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:248:37)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1528,8 +1272,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:31 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist:</summary>
-                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:31 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:10:59 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:10:59 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;48&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;content-security-policy&#x27;: &quot;default-src &#x27;self&#x27;;base-uri &#x27;self&#x27;;font-src &#x27;self&#x27; https: data:;form-action &#x27;self&#x27;;frame-ancestors &#x27;self&#x27;;img-src &#x27;self&#x27; data:;object-src &#x27;none&#x27;;script-src &#x27;self&#x27;;script-src-attr &#x27;none&#x27;;style-src &#x27;self&#x27; https: &#x27;unsafe-inline&#x27;;upgrade-insecure-requests&quot;, &#x27;cross-origin-opener-policy&#x27;: &#x27;same-origin&#x27;, &#x27;cross-origin-resource-policy&#x27;: &#x27;same-origin&#x27;, &#x27;origin-agent-cluster&#x27;: &#x27;?1&#x27;, &#x27;referrer-policy&#x27;: &#x27;no-referrer&#x27;, &#x27;strict-transport-security&#x27;: &#x27;max-age&#x3D;15552000; includeSubDomains&#x27;, &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;, &#x27;x-dns-prefetch-control&#x27;: &#x27;off&#x27;, &#x27;x-download-options&#x27;: &#x27;noopen&#x27;, &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;, &#x27;x-permitted-cross-domain-policies&#x27;: &#x27;none&#x27;, &#x27;x-xss-protection&#x27;: &#x27;0&#x27;, &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;access-control-expose-headers&#x27;: &#x27;Content-Disposition&#x27;, etag: &#x27;W/&quot;30-W25tFSt8g7bL3uTsA1ixaxvoxDw&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:249:13)
@@ -1546,7 +1290,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1592,22 +1336,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:265:37)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1627,7 +1355,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1673,22 +1401,6 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot construct a Request with a Request object that has already been used.:</summary>
-                        <pre>TypeError: Cannot construct a Request with a Request object that has already been used.
-                        at new Request (node:internal/deps/undici/undici:9516:19)
-                        at _sanitizeErrorHeaders (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:131:21)
-                        at makeHttpsRequest (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/node_modules/vc-test-suite-implementations/lib/requests.js:50:13)
-                        at runNextTicks (node:internal/process/task_queues:60:5)
-                        at listOnTimeout (node:internal/timers:545:9)
-                        at process.processTimers (node:internal/timers:519:7)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:279:35)</pre>
-                      </details>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1708,7 +1420,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected an HTTP error response code: expected undefined to exist:</summary>
+                        <summary>Expected an HTTP error response code: expected undefined to exist</summary>
                         <pre>AssertionError: Expected an HTTP error response code: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:14:10)
@@ -1850,8 +1562,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:40 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8bfc74d18a398256-IAD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist:</summary>
-                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 08 Sep 2024 05:14:40 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8bfc74d18a398256-IAD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:11:10 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8c361d5229bd607c-ORD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 15 Sep 2024 05:11:10 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8c361d5229bd607c-ORD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/11-vc-jwt.js:141:11)
