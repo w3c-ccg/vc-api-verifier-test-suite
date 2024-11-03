@@ -169,13 +169,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 164/198 82%
+      Tests passed 165/198 83%
       </p>
       <p>
-      Tests failed 34/198 18%
+      Tests failed 33/198 17%
       </p>
       <p>
-      Failures 34
+      Failures 33
       </p>
       <p>
       Tests skipped 0
@@ -184,7 +184,7 @@
       Total tests 198
       </p>
       <p>
-        These tests were run on <time>27 October 2024 at 5:11 am UTC</time>
+        These tests were run on <time>3 November 2024 at 5:11 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -282,16 +282,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
-                        <pre>AssertionError: expected HTTPError: Request failed with status cod… { …(6) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:58:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -313,8 +306,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>expected HTTPError { message: [ …(7) ], …(6) } to not exist</summary>
-                        <pre>AssertionError: expected HTTPError { message: [ …(7) ], …(6) } to not exist
+                        <summary>expected HTTPError { message: [ …(6) ], …(6) } to not exist</summary>
+                        <pre>AssertionError: expected HTTPError { message: [ …(6) ], …(6) } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/10-vc-di.js:58:20)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
@@ -1655,8 +1648,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 27 Oct 2024 05:11:32 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8d902f9b5c17c5a6-IAD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 27 Oct 2024 05:11:32 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8d902f9b5c17c5a6-IAD&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 03 Nov 2024 05:11:22 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8dc9dcfe28cb1566-SJC&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 03 Nov 2024 05:11:22 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;content-length&#x27;: &#x27;46&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8dc9dcfe28cb1566-SJC&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at testBadRequestError (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/helpers.js:12:14)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-api-verifier-test-suite/vc-api-verifier-test-suite/tests/11-vc-jwt.js:141:11)
