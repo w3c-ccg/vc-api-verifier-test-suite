@@ -2,13 +2,12 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import {
-  createInitialVc,
   createRequestBody,
   testBadRequestError
 } from './helpers.js';
 import chai from 'chai';
+import {ed25519Vector} from './vectors.js';
 import {filterByTag} from 'vc-test-suite-implementations';
-import {issuerName} from './test-config.js';
 import {klona} from 'klona';
 
 const should = chai.should();
@@ -18,10 +17,6 @@ const tag = 'vc-api';
 const {
   match: matchingVerifiers
 } = filterByTag({property: 'verifiers', tags: [tag]});
-const {match: matchingIssuers} = filterByTag({
-  property: 'issuers',
-  tags: [tag]
-});
 
 describe('Verify Credential - Data Integrity', function() {
   const summaries = new Set();
@@ -40,12 +35,7 @@ describe('Verify Credential - Data Integrity', function() {
     const verifier = verifiers.find(
       verifier => verifier.tags.has(tag));
     describe(verifierName, function() {
-      let validVc;
-      before(async function() {
-        const issuer = matchingIssuers.get(issuerName).issuers.find(
-          issuer => issuer.tags.has('vc-api'));
-        validVc = await createInitialVc({issuer});
-      });
+      const validVc = ed25519Vector;
       it('MUST verify a valid VC.', async function() {
         // this tells the test report which cell in the interop matrix
         // the result goes in
