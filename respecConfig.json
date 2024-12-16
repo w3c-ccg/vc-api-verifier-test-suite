@@ -3,7 +3,7 @@
   "shortName": "vc-api-verifier-test-suite",
   "subtitle": "Test Interoperability Report for Verifiable Credentials API Verifier",
   "github": "https://github.com/w3c-ccg/vc-api-verifier-test-suite",
-  "edDraftURI": "https://w3c-ccg.github.io/vc-api/#verify-credential",
+  "edDraftURI": "https://w3c-ccg.github.io/vc-api-verifier-test-suite/",
   "doJsonLd": true,
   "includePermalinks": false,
   "editors": [
