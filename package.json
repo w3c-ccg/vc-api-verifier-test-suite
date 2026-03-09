@@ -42,5 +42,8 @@
     "eslint-config-digitalbazaar": "^5.0.1",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-unicorn": "^49.0.0"
+  },
+  "overrides": {
+	"serialize-javascript": "^7.0.4"
   }
 }
